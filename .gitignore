@@ -42,7 +42,9 @@ Thumbs.db
 *.swo
 *~
 
-# Temporary & Log files
+# Temporary & Log files & Worktrees
 *.log
 tmp/
 scratch/
+.worktrees/
+
