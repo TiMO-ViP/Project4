@@ -63,3 +63,10 @@ clean:
 	@echo "🧹 Cleaning build artifacts and cache directories..."
 	@rm -rf dist/ build/ .cache/ tmp/
 	@echo "✅ Cleanup complete."
+
+memory-search:
+	@python3 .agents/scripts/tier2-memory-engine.py search "$(Q)"
+
+memory-list:
+	@python3 .agents/scripts/tier2-memory-engine.py list
+
