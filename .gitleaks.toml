@@ -1,0 +1,14 @@
+# Gitleaks Configuration & Allowlist for Project Governance
+
+[allowlist]
+description = "Global allowlist for test fixtures, manifests, and mock hashes"
+paths = [
+    '''\.agents/manifest\.lock\.json''',
+    '''\.agents/scripts/tests/.*''',
+    '''\.specify/.*''',
+    '''Makefile'''
+]
+regexes = [
+    '''sk_test_[0-9a-zA-Z]{24}''',
+    '''[a-f0-9]{32}'''
+]
