@@ -4,34 +4,26 @@ created: 2026-05-25
 updated: 2026-08-11
 ---
 
-# Project Conventions & Git/GitHub Governance
+# Project Conventions & Git Governance Memory
 
-## 🌲 Git Branching Strategy & Lifecycle
-- **`main`**: Protected production branch. Always deployable. No direct commits permitted.
-- **`develop`**: Integration branch for upcoming releases (if applicable).
-- **Feature Branches**: `feature/<short-description>` (e.g., `feature/auth-system`)
-- **Bug Fix Branches**: `fix/<short-description>` (e.g., `fix/login-null-pointer`)
-- **Chore / Maintenance**: `chore/<short-description>` (e.g., `chore/update-deps`)
-- **Documentation**: `docs/<short-description>` (e.g., `docs/api-guide`)
+## 🌐 Repository & Environment Details
+- **GitHub Repository**: `https://github.com/TiMO-ViP/Project4.git` (Default Branch: `main`)
+- **System**: Ubuntu 26.04 LTS (`resolute`) on `aarch64` inside PRoot-Distro
+- **Runtimes**: Node.js `v24.19.0`, Python `3.14.4`, Git `2.53.0`
+- **Toolkit**: AG Kit `2026.7.27`
 
-## 📝 Commit Conventions & Detailed Message Protocol
-- All commit messages MUST follow **Conventional Commits**: `<type>(<scope>): <summary>`
-- Allowed types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `chore`, `ci`
-- **Mandatory Message Structure**:
-  1. **Header**: `<type>(<scope>): <summary>` (max 50 chars, present tense, lowercase)
-  2. **Body - Why**: Explanation of why the change was necessary and what problem it solves.
-  3. **Body - What**: Bullet points of specific code changes made.
-  4. **Body - Verification**: Empirical proof/test runner results showing successful validation.
+## 🌲 Git Branching & Worktree Strategy
+- **`main`**: Protected production branch. Always deployable. Direct pushes forbidden once linked.
+- **Git Worktrees**: Parallel tasks run in `.worktrees/<branch-name>` via `.agents/scripts/git-enterprise-engine.sh`.
+- **Branch Taxonomy**: `epic/<domain>`, `feature/<epic>/<task>`, `fix/<issue>`, `chore/<tooling>`.
+- **Automated Pruning**: Run `make prune` to clean merged branches and stale worktrees.
 
-## 🚀 GitHub Remote Management & Merge Protocol
-- **Remote Link**: `git remote add origin <github-repo-url>`
-- **Initial Push**: `git push -u origin main`
-- **Pull Requests (PR)**:
-  - All PRs must be opened against `main` (or `develop`).
-  - PR titles must follow Conventional Commits.
-  - Complete `.github/PULL_REQUEST_TEMPLATE.md` with verification proof.
-  - Merge Strategy: **Squash-and-Merge** or **Rebase-and-Merge** to maintain a linear git history.
+## 📝 Commit & Hook Conventions
+- **Conventional Commits**: `<type>(<scope>): <summary>` (enforced by `.gitmessage`).
+- **Required Body Sections**: WHY / MOTIVATION, WHAT / CHANGES MADE, VERIFICATION & EVIDENCE.
+- **Git Hooks Path**: Configured to `.githooks/` via `git config core.hooksPath .githooks`.
+  - `.githooks/pre-commit`: Secret scanning security gate (Gitleaks).
+  - `.githooks/prepare-commit-msg`: Deterministic auto-commit message generator.
 
-## 🤖 Supported AI platforms (AG Kit)
-- AG Kit **only supports Gemini CLI and Google Antigravity**.
-- Do not claim compatibility with Claude Code, Cursor, Copilot, Windsurf, or other assistants unless user explicitly expands scope.
+## ⚡ Automation CLI (`Makefile`)
+- Single-word commands: `make help`, `make dev`, `make lint`, `make format`, `make test`, `make typecheck`, `make check`, `make security`, `make prune`, `make sync`, `make clean`.
