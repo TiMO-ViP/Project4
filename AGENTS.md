@@ -22,12 +22,31 @@
 
 ---
 
-## 🔄 Commit & Git Conventions
+## 🌲 Git Branching & GitHub Protocol
 
-- **Branch Naming**: `feature/short-name`, `fix/short-name`, `chore/short-name`.
-- **Commit Style**: Conventional Commits (`type(scope): description`).
-  - Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `chore`, `ci`.
-- **Verification**: Always run lint and test suites before making assertions of completion.
+- **Branch Naming**: `feature/short-description`, `fix/short-description`, `chore/short-description`, `docs/short-description`.
+- **Protected Trunk**: Direct pushes to `main` are forbidden once remote is connected. Use Pull Requests (PRs).
+- **Git Worktrees**: For parallel task execution, use `git worktree add ../<folder> <branch>` to avoid switching context on `main`.
+
+---
+
+## 📝 Commit Message Protocol
+
+- **Format**: `<type>(<scope>): <short-summary>`
+- **Template**: Enforced by `.gitmessage`.
+- **Commit Body Requirements**:
+  1. **Why**: Context and motivation for the change.
+  2. **What**: Bullet points of technical modifications.
+  3. **Verification**: Command evidence showing tests/lints passed.
+
+---
+
+## 🔄 GitHub Remote Commands Quick-Reference
+
+- **Link Remote**: `git remote add origin <url>`
+- **Push Branch**: `git push -u origin <branch-name>`
+- **Create PR via GitHub CLI**: `gh pr create --title "type(scope): summary" --body-file .github/PULL_REQUEST_TEMPLATE.md`
+- **Merge PR via GitHub CLI**: `gh pr merge --squash --delete-branch`
 
 ---
 
@@ -35,5 +54,7 @@
 
 - `.agents/` — AG Kit agent personas, skills, workflows, and memory system.
 - `.agents/memory/MEMORY.md` — Persistent cross-session index pointer.
+- `.github/` — PR templates, issue templates, and CODEOWNERS routing.
+- `.gitmessage` — Structured commit template.
 - `.gitignore` — Exclusion manifest.
 - `.editorconfig` — Code formatting definitions.

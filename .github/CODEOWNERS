@@ -1,0 +1,13 @@
+# Global CODEOWNERS file for GitHub repository governance
+# Defines automatic review routing for paths and components.
+
+# Default global owner for all repository files
+*                   @owner
+
+# Critical configuration & security paths
+/.github/           @owner
+/AGENTS.md          @owner
+/CODEBASE.md        @owner
+/.agents/           @owner
+/.gitignore         @owner
+/.editorconfig      @owner

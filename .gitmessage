@@ -1,0 +1,20 @@
+# <type>(<scope>): <short summary (max 50 chars)>
+# │       │       │
+# │       │       └─> Present tense, lowercase, no period at end
+# │       └─> Component or module affected (e.g., auth, api, ui, deps, config)
+# └─> feat, fix, docs, style, refactor, perf, test, chore, ci
+
+# --- WHY / MOTIVATION ---
+# Explain WHY this change is necessary and what problem it solves.
+
+# --- WHAT / CHANGES MADE ---
+# List bullet points of specific technical changes implemented:
+# - Added...
+# - Refactored...
+# - Fixed...
+
+# --- VERIFICATION & EVIDENCE ---
+# Describe how this change was tested and verified:
+# - Unit tests: [Passed / N/A]
+# - Integration tests: [Passed / N/A]
+# - Manual execution command / proof:
