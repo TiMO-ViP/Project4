@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Native Git Hook: prepare-commit-msg
+# Automatically injects deterministic non-AI commit message if commit message is empty
+
+COMMIT_MSG_FILE="$1"
+COMMIT_SOURCE="$2"
+
+# Only auto-generate if user did not provide a message via -m or template
+if [ -z "$COMMIT_SOURCE" ] || [ "$COMMIT_SOURCE" = "template" ]; then
+  AUTO_MSG=$(bash .agents/scripts/git-auto-commit-msg.sh 2>/dev/null || true)
+  if [ -n "$AUTO_MSG" ]; then
+    echo "$AUTO_MSG" > "$COMMIT_MSG_FILE"
+  fi
+fi

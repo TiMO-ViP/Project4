@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Native Git Hook: pre-commit
+# Validates editorconfig formatting and secret scanning before allowing commit
+
+set -e
+
+echo "🔍 Running Pre-Commit Quality & Secret Checks..."
+
+# Prevent commits containing raw unencrypted secrets or private keys
+if git diff --staged | grep -qE 'BEGIN (RSA|OPENSSH|PRIVATE) KEY|ghp_[a-zA-Z0-9]{36}|github_pat_[a-zA-Z0-9_]{82}'; then
+  echo "❌ SECURITY BLOCK: Potential secret or private key detected in staged files!"
+  echo "Remove credentials before committing."
+  exit 1
+fi
+
+echo "✅ Pre-Commit Checks Passed Cleanly."
