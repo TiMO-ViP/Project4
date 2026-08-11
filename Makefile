@@ -73,4 +73,8 @@ memory-list:
 log-export:
 	@python3 .agents/scripts/export-conversation-log.py
 
+log-live:
+	@python3 .agents/scripts/live_session_logger.py read 20
+
+
 
