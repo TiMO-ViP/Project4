@@ -70,3 +70,7 @@ memory-search:
 memory-list:
 	@python3 .agents/scripts/tier2-memory-engine.py list
 
+log-export:
+	@python3 .agents/scripts/export-conversation-log.py
+
+

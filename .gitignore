@@ -49,4 +49,5 @@ scratch/
 .worktrees/
 .agents/memory/*.db
 .agents/memory/*.sqlite
+.agents/logs/
 
