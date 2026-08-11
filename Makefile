@@ -76,5 +76,18 @@ log-export:
 log-live:
 	@python3 .agents/scripts/live_session_logger.py read 20
 
+db-start:
+	@npx supabase start
+
+db-stop:
+	@npx supabase stop
+
+db-diff:
+	@npx supabase db diff
+
+db-push:
+	@npx supabase db push
+
+
 
 
