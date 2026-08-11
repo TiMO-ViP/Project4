@@ -47,4 +47,6 @@ Thumbs.db
 tmp/
 scratch/
 .worktrees/
+.agents/memory/*.db
+.agents/memory/*.sqlite
 
