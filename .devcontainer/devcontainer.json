@@ -1,0 +1,30 @@
+{
+  "name": "Enterprise Agentic DevContainer",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-24-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll.biome": "explicit"
+        },
+        "files.eol": "\n",
+        "files.insertFinalNewline": true
+      },
+      "extensions": [
+        "biomejs.biome",
+        "eamodio.gitlens",
+        "charliermarsh.ruff",
+        "github.vscode-github-actions"
+      ]
+    }
+  },
+  "postCreateCommand": "bash .agents/scripts/setup-environment.sh all && git config core.hooksPath .githooks"
+}
