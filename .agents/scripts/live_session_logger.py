@@ -1,76 +1,78 @@
 #!/usr/bin/env python3
 """
-Atomic Real-Time Append-Only Live Session Logger for AG Kit
+Full Verbatim Conversation Logger for AG Kit
 Location: .agents/scripts/live_session_logger.py
 
-Maintains a crash-proof, append-only JSON Lines (.jsonl) file:
-.agents/logs/live_session.jsonl
-
-Features:
-- Instant atomic append ('a' mode with os.fsync)
-- Zero file rewrites / Zero data loss on sudden crashes or shutdown
-- Real-time timestamping (ISO 8601 UTC)
+Extracts 100% full verbatim copy-and-paste text of all user inputs
+and assistant Markdown responses directly from system transcript logs.
 """
 
 import os
 import sys
 import json
-import datetime
+import glob
+import re
 
+BRAIN_DIR = "/root/.gemini/antigravity-cli/brain"
 LOG_DIR = os.path.join(os.path.dirname(__file__), "..", "logs")
 LIVE_LOG_PATH = os.path.join(LOG_DIR, "live_session.jsonl")
 
-def append_log_entry(role, content, tool_calls=None, metadata=None):
-    os.makedirs(LOG_DIR, exist_ok=True)
-    
-    now = datetime.datetime.now(datetime.timezone.utc).isoformat()
-    
-    entry = {
-        "timestamp": now,
-        "role": role,
-        "content": content,
-        "tool_calls": tool_calls or [],
-        "metadata": metadata or {}
-    }
-    
-    # Atomic line append with immediate physical disk sync (os.fsync)
-    with open(LIVE_LOG_PATH, "a", encoding="utf-8") as f:
-        f.write(json.dumps(entry, ensure_ascii=False) + "\n")
-        f.flush()
-        os.fsync(f.fileno())
-        
-    print(json.dumps({"status": "appended_atomic", "timestamp": now, "role": role}))
+def find_latest_transcript_full():
+    if not os.path.exists(BRAIN_DIR):
+        return None
+    transcripts = glob.glob(os.path.join(BRAIN_DIR, "*", ".system_generated", "logs", "transcript_full.jsonl"))
+    if not transcripts:
+        return None
+    transcripts.sort(key=lambda x: os.path.getmtime(x), reverse=True)
+    return transcripts[0]
 
-def read_live_log(limit=20):
-    if not os.path.exists(LIVE_LOG_PATH):
-        print(json.dumps({"status": "empty", "entries": []}))
+def sync_full_conversation_logs():
+    """Syncs 100% full verbatim text to live_session.jsonl."""
+    transcript_path = find_latest_transcript_full()
+    if not transcript_path or not os.path.exists(transcript_path):
         return
         
-    entries = []
-    with open(LIVE_LOG_PATH, "r", encoding="utf-8") as f:
+    os.makedirs(LOG_DIR, exist_ok=True)
+    
+    full_turns = []
+    with open(transcript_path, "r", encoding="utf-8") as f:
         for line in f:
             if line.strip():
                 try:
-                    entries.append(json.loads(line))
+                    data = json.loads(line)
+                    ttype = data.get("type")
+                    content = data.get("content", "")
+                    
+                    if content and ttype in ("USER_INPUT", "PLANNER_RESPONSE"):
+                        # Clean system prompt wrapper tags if present
+                        clean_content = re.sub(r'<USER_REQUEST>\s*', '', content)
+                        clean_content = re.sub(r'\s*</USER_REQUEST>', '', clean_content)
+                        clean_content = re.sub(r'<ADDITIONAL_METADATA>.*?</ADDITIONAL_METADATA>', '', clean_content, flags=re.DOTALL)
+                        clean_content = re.sub(r'<USER_SETTINGS_CHANGE>.*?</USER_SETTINGS_CHANGE>', '', clean_content, flags=re.DOTALL)
+                        clean_content = clean_content.strip()
+                        
+                        if clean_content and not clean_content.startswith("Created At:"):
+                            role = "user" if ttype == "USER_INPUT" else "assistant"
+                            full_turns.append({
+                                "step": data.get("step_index"),
+                                "timestamp": data.get("created_at"),
+                                "role": role,
+                                "verbatim_text": clean_content
+                            })
                 except Exception:
                     pass
                     
-    recent = entries[-limit:] if limit > 0 else entries
-    print(json.dumps({"total": len(entries), "shown": len(recent), "entries": recent}, indent=2, ensure_ascii=False))
+    with open(LIVE_LOG_PATH, "w", encoding="utf-8") as f:
+        for turn in full_turns:
+            f.write(json.dumps(turn, ensure_ascii=False) + "\n")
+            
+    return full_turns
+
+def read_full_log(limit=4):
+    turns = sync_full_conversation_logs() or []
+    recent = turns[-limit:] if limit > 0 else turns
+    print(json.dumps({"total_text_turns": len(turns), "shown": len(recent), "turns": recent}, indent=2, ensure_ascii=False))
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: live_session_logger.py [append <user|assistant> <content> [tool_calls_json] | read [limit]]")
-        sys.exit(1)
-        
-    cmd = sys.argv[1]
-    if cmd == "append" and len(sys.argv) >= 4:
-        role = sys.argv[2]
-        content = sys.argv[3]
-        tools = json.loads(sys.argv[4]) if len(sys.argv) > 4 else None
-        append_log_entry(role, content, tools)
-    elif cmd == "read":
-        limit = int(sys.argv[2]) if len(sys.argv) > 2 else 20
-        read_live_log(limit)
-    else:
-        print("Invalid arguments.")
+    limit = int(sys.argv[2]) if len(sys.argv) > 2 else 4
+    read_full_log(limit)
