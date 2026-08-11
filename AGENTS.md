@@ -10,6 +10,7 @@
 2. **Quality & Clean Code**: Adhere to `@[skills/clean-code]`. No unnecessary abstractions, no dummy fallback code, no swallowing errors.
 3. **No Unrequested Project Code**: Do NOT generate application logic or build new components without explicit user authorization.
 4. **Strict Security**: Never commit secrets, credentials, API keys, or private certificates. Validate `.gitignore` before every commit.
+5. **Automated Real-Time Session Logging**: Automatically log session boot and turn entries to `.agents/logs/live_session.jsonl` via `python3 .agents/scripts/live_session_logger.py` for 100% crash-proof persistence.
 
 ---
 

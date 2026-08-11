@@ -26,4 +26,7 @@ updated: 2026-08-11
   - `.githooks/prepare-commit-msg`: Deterministic auto-commit message generator.
 
 ## ⚡ Automation CLI (`Makefile`)
-- Single-word commands: `make help`, `make dev`, `make lint`, `make format`, `make test`, `make typecheck`, `make check`, `make security`, `make prune`, `make sync`, `make clean`.
+- Single-word commands: `make help`, `make dev`, `make lint`, `make format`, `make test`, `make typecheck`, `make check`, `make security`, `make prune`, `make sync`, `make clean`, `make log-live`.
+
+## ⏱️ Real-Time Session Logger
+- **Automated Live Logging**: Atomic append-only JSON Lines stream (`.agents/logs/live_session.jsonl`) updated automatically on session boot and turn via `.agents/scripts/live_session_logger.py`.
