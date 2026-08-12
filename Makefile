@@ -33,6 +33,7 @@ format:
 
 test:
 	@echo "🧪 Executing automated test suite..."
+	@node --test .agents/scripts/run-tests.mjs
 	@echo "✅ All tests passed."
 
 typecheck:
