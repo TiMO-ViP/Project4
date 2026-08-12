@@ -1,12 +1,14 @@
 {
   "name": "project4",
   "version": "1.0.0",
-  "description": "Enterprise multi-stack project with Supabase, Drizzle ORM, and TypeScript",
+  "description": "Enterprise multi-stack project with Next.js 16, Supabase, Drizzle ORM, and TypeScript",
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "build": "tsc",
-    "test": "vitest run",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "node --test .agents/scripts/run-tests.mjs",
     "lint": "biome check ./src",
     "format": "biome format --write ./src",
     "db:generate": "drizzle-kit generate",
@@ -14,12 +16,19 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.5.2",
     "@supabase/supabase-js": "^2.49.1",
     "drizzle-orm": "^0.45.2",
-    "postgres": "^3.4.9"
+    "next": "^16.3.0",
+    "postgres": "^3.4.9",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@types/node": "^26.2.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "drizzle-kit": "^0.31.10",
     "supabase": "^2.113.0",
     "typescript": "^7.0.2",
