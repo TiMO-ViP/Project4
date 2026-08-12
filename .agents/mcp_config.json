@@ -1,5 +1,8 @@
 {
   "mcpServers": {
+    "supabase": {
+      "serverUrl": "https://mcp.supabase.com/mcp?project_ref=awtuyagramircsbjnjzy&features=docs%2Caccount%2Cdatabase%2Cdebugging%2Cdevelopment%2Cfunctions%2Cbranching"
+    },
     "filesystem": {
       "command": "npx",
       "args": [
@@ -43,28 +46,6 @@
         "@modelcontextprotocol/server-sqlite",
         "--db-path",
         ".agents/memory/tier2_vector.db"
-      ]
-    },
-    "postgres": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-postgres",
-        "postgresql://localhost:5432/project4"
-      ]
-    },
-    "supabase": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@supabase/mcp-server-supabase"
-      ]
-    },
-    "mongodb": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@mongodb-js/mongodb-mcp-server"
       ]
     }
   }

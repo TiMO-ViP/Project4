@@ -50,4 +50,7 @@ scratch/
 .agents/memory/*.db
 .agents/memory/*.sqlite
 .agents/logs/
+New Folder/
+supabase/supabase.hub/
+
 
