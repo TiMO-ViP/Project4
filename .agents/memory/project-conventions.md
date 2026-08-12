@@ -1,32 +1,30 @@
+# Project Conventions Memory Vault
+
+> Stores project governance rules, directory topology, and Git workflow conventions.
+
 ---
-type: project
-created: 2026-05-25
-updated: 2026-08-11
+
+## 🌲 Git Branching & Hierarchy Rules
+* **`main`**: Protected production trunk. Only stable, production-tested code.
+* **`develop`**: Primary integration branch for active development.
+* **`feature/<short-slug>`**: Feature development branches created for SDD specs.
+* **`fix/<short-slug>`**: Bug fix branches.
+* **`chore/<short-slug>`**: Infrastructure, dependency, and documentation updates.
+
 ---
 
-# Project Conventions & Git Governance Memory
+## 🏛️ Government-Grade Clean Architecture Topology
+* **`src/domain/`**: Pure Business Logic (Entities & Repository Contracts - ZERO dependencies).
+* **`src/application/`**: Use Cases & Application Services.
+* **`src/infrastructure/`**: Database (Drizzle ORM) & Supabase Adapters.
+* **`src/features/`**: Domain Feature Modules (UI + Local Logic).
+* **`src/app/`**: Next.js 16 App Router Routes & `src/proxy.ts` (Node.js runtime network boundary).
 
-## 🌐 Repository & Environment Details
-- **GitHub Repository**: `https://github.com/TiMO-ViP/Project4.git` (Default Branch: `main`)
-- **System**: Ubuntu 26.04 LTS (`resolute`) on `aarch64` inside PRoot-Distro
-- **Runtimes**: Node.js `v24.19.0`, Python `3.14.4`, Git `2.53.0`
-- **Toolkit**: AG Kit `2026.7.27`
+---
 
-## 🌲 Git Branching & Worktree Strategy
-- **`main`**: Protected production branch. Always deployable. Direct pushes forbidden once linked.
-- **Git Worktrees**: Parallel tasks run in `.worktrees/<branch-name>` via `.agents/scripts/git-enterprise-engine.sh`.
-- **Branch Taxonomy**: `epic/<domain>`, `feature/<epic>/<task>`, `fix/<issue>`, `chore/<tooling>`.
-- **Automated Pruning**: Run `make prune` to clean merged branches and stale worktrees.
-
-## 📝 Commit & Hook Conventions
-- **Conventional Commits**: `<type>(<scope>): <summary>` (enforced by `.gitmessage`).
-- **Required Body Sections**: WHY / MOTIVATION, WHAT / CHANGES MADE, VERIFICATION & EVIDENCE.
-- **Git Hooks Path**: Configured to `.githooks/` via `git config core.hooksPath .githooks`.
-  - `.githooks/pre-commit`: Secret scanning security gate (Gitleaks).
-  - `.githooks/prepare-commit-msg`: Deterministic auto-commit message generator.
-
-## ⚡ Automation CLI (`Makefile`)
-- Single-word commands: `make help`, `make dev`, `make lint`, `make format`, `make test`, `make typecheck`, `make check`, `make security`, `make prune`, `make sync`, `make clean`, `make log-live`.
-
-## ⏱️ Real-Time Session Logger
-- **Automated Live Logging**: Atomic append-only JSON Lines stream (`.agents/logs/live_session.jsonl`) updated automatically on session boot and turn via `.agents/scripts/live_session_logger.py`.
+## 📜 Spec-Driven Development (SDD) Lifecycle
+* **Phase 1**: Run `/speckit.specify` on `develop` to generate `.specify/specs/<feature>.md`.
+* **Phase 2**: Run `/speckit.plan` to generate technical blueprint & ADR.
+* **Phase 3**: Run `/speckit.tasks` to generate executable task list.
+* **Phase 4**: Create `feature/<feature-slug>` branch and run `/speckit.implement`.
+* **Phase 5**: Open Pull Request (PR) to merge into `develop`.

@@ -1,19 +1,30 @@
-# Memory Index Pointer Directory
+# 🧠 AG Kit 2-Tier Persistent Memory Vault
 
-## User
-- [user] Respond strictly in English on terminal, zero Arabic text → user-preferences.md
-- [user] Senior Architect/Engineer style, prefers empirical evidence and CLI automation → user-preferences.md
-- [user] No unrequested application code until explicitly commanded → user-preferences.md
+> Master index pointer file for cross-session AI memory in Project4.
 
-## Project
-- [project] GitHub repository: https://github.com/TiMO-ViP/Project4.git (main branch) → project-conventions.md
-- [project] Single-word CLI Makefile automation (make help, make check, make sync) → project-conventions.md
-- [project] Native version-controlled Git hooks active in .githooks/ → project-conventions.md
-- [project] Parallel Git worktrees managed via .agents/scripts/git-enterprise-engine.sh → project-conventions.md
+---
 
-## Reference & ADR
-- [reference] Secrets in .env or GitHub Secrets; NEVER store secrets in Git branches → tech-decisions.md
-- [reference] git rerere enabled for merge conflict memory → tech-decisions.md
-- [reference] git notes --ref=ai-audit used for machine commit metadata → tech-decisions.md
-- [reference] Biome (JS/TS) and Ruff (Python) default 2026 linter toolchains → tech-decisions.md
-- [reference] DevContainer (.devcontainer/) enabled for VS Code / Codespaces → tech-decisions.md
+## 📌 Memory Vault Index Pointer
+
+1. **[User Preferences (`user-preferences.md`)](user-preferences.md)**:
+   * English-only terminal output directive.
+   * Directive 6: Always-Latest Package Protocol (`npm info`, `context7`).
+   * Local-First Database strategy (`make db-start`).
+   * No unrequested application business logic.
+   * Atomic real-time JSONL session logging (`live_session.jsonl`).
+
+2. **[Project Conventions (`project-conventions.md`)](project-conventions.md)**:
+   * Git Branching Hierarchy: `main` (Protected), `develop` (Integration), `feature/*` (SDD specs).
+   * Government-Grade Clean Architecture (`src/domain`, `src/application`, `src/infrastructure`, `src/features`, `src/app`).
+   * Spec-Driven Development (SDD) 5-Phase Lifecycle.
+
+3. **[Technical Decisions & ADRs (`tech-decisions.md`)](../tech-decisions.md)**:
+   * Audited 2026 Stack: Next.js v16.3.0 (`proxy.ts`), TypeScript v7.0.2 (Go compiler), Supabase v2.113.0, Drizzle ORM v0.45.2.
+   * NIST SP 800-218 (SSDF) Security & B-tree indexed RLS policies.
+
+---
+
+## ⚡ Tier 2 Vector Memory Search Command
+```bash
+make memory-search Q="supabase auth"
+```

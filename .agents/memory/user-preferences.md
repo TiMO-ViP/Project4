@@ -4,12 +4,13 @@
 
 ---
 
-## 🗣️ Language Directives
-* **Terminal Communication**: Respond strictly in English. No Arabic characters in terminal outputs to avoid encoding/display corruption.
+## 🗣️ Language & Output Directives
+* **Strict Terminal Communication**: Respond strictly in English. No Arabic characters in terminal outputs to prevent encoding and display corruption.
 
 ---
 
 ## ⚡ Technical & Tooling Preferences
-1. **Always-Latest Versions Directive**: AI agents must always check live registry APIs (`npm info <pkg> version`, `context7`) to use the latest versions of TypeScript, Drizzle ORM, Supabase CLI, and Node packages.
-2. **Local-First Database Strategy**: Use Supabase CLI (`supabase start`) and Drizzle ORM locally before deploying migrations to cloud.
-3. **No Unrequested Application Code**: Do not generate application features or business logic without explicit user commands.
+1. **Directive 6 - Always-Latest Package Protocol**: AI agents MUST always query live registry APIs (`npm info <pkg> version`, `context7` live docs) before installing or scaffolding dependencies.
+2. **Local-First Database Strategy**: Develop and test database schemas locally via Supabase CLI (`make db-start`) and Drizzle ORM before deploying SQL migrations to cloud (`make db-push`).
+3. **No Unrequested Application Logic**: Never build application business logic or features without explicit user authorization via slash commands (`/speckit.specify`) or direct commands.
+4. **Real-Time Verbatim Session Logging**: Automatically stream turn entries to `.agents/logs/live_session.jsonl` with full verbatim text and `os.fsync` disk flushing.
