@@ -11,6 +11,8 @@
 3. **No Unrequested Project Code**: Do NOT generate application logic or build new components without explicit user authorization.
 4. **Strict Security**: Never commit secrets, credentials, API keys, or private certificates. Validate `.gitignore` before every commit.
 5. **Automated Real-Time Session Logging**: Automatically log session boot and turn entries to `.agents/logs/live_session.jsonl` via `python3 .agents/scripts/live_session_logger.py` for 100% crash-proof persistence.
+6. **Always-Latest Package & Tooling Protocol**: Always query live package registries (`npm info`, `context7`) to ensure all installed libraries, tools, and runtimes use the absolute latest stable versions.
+
 
 ---
 

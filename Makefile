@@ -88,6 +88,10 @@ db-diff:
 db-push:
 	@npx supabase db push
 
+version-audit:
+	@npm info typescript version && npm info drizzle-orm version && npm info drizzle-kit version && npm info supabase version
+
+
 
 
 

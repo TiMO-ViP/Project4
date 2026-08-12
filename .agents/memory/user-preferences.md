@@ -1,18 +1,15 @@
+# User Preferences Memory Vault
+
+> Stores persistent user communication preferences, execution rules, and workflow directives.
+
 ---
-type: user
-created: 2026-08-11
-updated: 2026-08-11
+
+## 🗣️ Language Directives
+* **Terminal Communication**: Respond strictly in English. No Arabic characters in terminal outputs to avoid encoding/display corruption.
+
 ---
 
-# User Preferences & Operational Directives
-
-## Communication & Language Rules
-- **Terminal Language**: STRICTLY ENGLISH ONLY. All responses, comments, and terminal outputs MUST be in English. Zero Arabic text in output to prevent terminal display issues.
-- **Communication Style**: Professional, authoritative, concise, well-structured GitHub markdown with clear tables and code blocks.
-- **Tone**: Pair-programming partner. Focus on empirical evidence and zero fluff.
-
-## Project Execution & Safety Guardrails
-- **No Unrequested Code**: Never build, code, or generate application logic without explicit user request.
-- **Strict Pre-Flight Compliance**: Always verify environment readiness, secrets safety, and git configuration before performing actions.
-- **Deterministic Automation**: Prefer automated scripts, Makefile commands, and hooks over manual typing.
-- **No Mock Fallbacks / No Swallowing Errors**: Always trace real root causes and provide 100% production-grade solutions.
+## ⚡ Technical & Tooling Preferences
+1. **Always-Latest Versions Directive**: AI agents must always check live registry APIs (`npm info <pkg> version`, `context7`) to use the latest versions of TypeScript, Drizzle ORM, Supabase CLI, and Node packages.
+2. **Local-First Database Strategy**: Use Supabase CLI (`supabase start`) and Drizzle ORM locally before deploying migrations to cloud.
+3. **No Unrequested Application Code**: Do not generate application features or business logic without explicit user commands.
