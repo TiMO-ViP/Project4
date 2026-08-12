@@ -93,8 +93,13 @@ db-stop:
 db-diff:
 	@npx supabase db diff
 
-db-push:
-	@npx supabase db push
+db-push-local:
+	@DB_TARGET=local npx drizzle-kit push
+
+db-push-cloud:
+	@DB_TARGET=cloud npx drizzle-kit push
+
+db-push: db-push-local
 
 version-audit:
 	@npm info typescript version && npm info drizzle-orm version && npm info drizzle-kit version && npm info supabase version
