@@ -19,11 +19,15 @@ No unrequested code generation or raw chat-driven feature building allowed.
 - All secrets live in local `.env` (excluded by `.gitignore`) or GitHub Actions Encrypted Secrets.
 - Pre-commit hook (`.githooks/pre-commit`) blocks secret leaks automatically.
 
-### IV. Test-Driven & Clean Code Quality
+### IV. Git Branching Lifecycle
+### Principle 5: Native Git Branching & SDD Integration
+Every feature specification created via `/speckit.specify` on `develop` MUST spawn a corresponding `feature/<feature-slug>` branch for implementation. No direct commits to `main`. Merges into `develop` require pull request (PR) reviews and test pass verification.
+
+### V. Test-Driven & Clean Code Quality
 - Clean Code principles (`@[skills/clean-code]`) strictly enforced. No swallowing errors, no dummy fallbacks.
 - Automated tests written & passing before marking features as complete.
 
-### V. Git Worktree & Branch Governance
+### VI. Git Worktree & Branch Governance
 - Main branch (`main`) is protected.
 - Parallel tasks executed in isolated Git Worktrees (`.worktrees/`).
 - Commit messages follow Conventional Commits (`type(scope): description` + Why, What, Verification).

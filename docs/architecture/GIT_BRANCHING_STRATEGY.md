@@ -39,7 +39,37 @@
 
 ---
 
+## ⚡ Native Spec Kit (SDD) + Branching Lifecycle
+
+Spec Kit (`specify-cli`) operates in **native alignment** with our branch hierarchy:
+
+```text
+ ┌──────────────────────────────────────────────────────────────────────────┐
+ │  1. SPECIFICATION PHASE (on `develop` branch)                             │
+ │     Run `/speckit.specify` ──> Generates `.specify/specs/<feature-slug>.md`│
+ │     Run `/speckit.plan`    ──> Generates Technical Blueprint & ADR      │
+ │     Run `/speckit.tasks`   ──> Generates Executable Task List            │
+ └────────────────────────────────────┬─────────────────────────────────────┘
+                                      │
+                                      ▼
+ ┌──────────────────────────────────────────────────────────────────────────┐
+ │  2. FEATURE BRANCH CREATION                                              │
+ │     `git checkout -b feature/<feature-slug>`                             │
+ └────────────────────────────────────┬─────────────────────────────────────┘
+                                      │
+                                      ▼
+ ┌──────────────────────────────────────────────────────────────────────────┐
+ │  3. IMPLEMENTATION & PR PHASE                                            │
+ │     Run `/speckit.implement` ──> Executes task implementation          │
+ │     `git push origin feature/<feature-slug>`                             │
+ │     `gh pr create --base develop` ──> Merges into `develop`              │
+ └──────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
 ## 🛠️ Developer Branch Commands
+
 
 ```bash
 # 1. Start a new feature branch from develop
