@@ -1,36 +1,37 @@
 # System & Tooling Dependency Manifest
 
-> Exhaustive manifest of all system runtimes, CLI binaries, package managers, ORMs, databases, and dependencies used in Project4.
+> Exhaustive, live-audited manifest of all system runtimes, CLI binaries, package managers, ORMs, databases, and dependencies used in Project4.
 
 ---
 
 ## 🛠️ Runtimes & Core Infrastructure
 
-| Tool / Runtime | Version | Scope & Purpose | Location / Executable |
-| :--- | :--- | :--- | :--- |
-| **Node.js** | `v24.19.0` | JavaScript / TypeScript Server Runtime | `/usr/bin/node` |
-| **Python** | `v3.14.4` | System Automation, Log Processors & Memory Engine | `/usr/bin/python3` |
-| **Git** | `v2.53.0` | Distributed Version Control System | `/usr/bin/git` |
-| **GitHub CLI (`gh`)** | `v2.46.0` | GitHub Automation & PR Management | `/usr/bin/gh` |
-| **pnpm** | `v11.21.0` | High-Performance Package Manager | `/usr/bin/pnpm` |
-| **npm** | `v10.9.2` | Node Package Manager | `/usr/bin/npm` |
-| **Cargo / Rust** | `v1.97.1` | Systems Programming Runtime & Compiler | `/root/.cargo/bin/cargo` |
-| **GCC** | `v15.2.0` | GNU C/C++ Compiler | `/usr/bin/gcc` |
-| **Make** | `v4.4.1` | Build Automation Engine | `/usr/bin/make` |
-| **Specify CLI (`specify-cli`)** | `v0.16.3.dev0` | GitHub Spec Kit SDD Tooling | `/usr/local/bin/specify-cli` |
+| Tool / Runtime | Version | Status / Audit Date | Scope & Purpose | Location / Executable |
+| :--- | :--- | :--- | :--- | :--- |
+| **TypeScript** | `v7.0.2` | 🟢 **LATEST 2026** | Type compiler engine (ES2024 NodeNext target) | Installed in `node_modules` |
+| **Node.js** | `v24.19.0` | 🟢 **ACTIVE LTS** | JavaScript / TypeScript Server Runtime | `/usr/bin/node` |
+| **Python** | `v3.14.4` | 🟢 **ACTIVE STABLE**| System Automation, Log Processors & Memory Engine | `/usr/bin/python3` |
+| **Git** | `v2.53.0` | 🟢 **LATEST STABLE**| Distributed Version Control System | `/usr/bin/git` |
+| **GitHub CLI (`gh`)** | `v2.46.0` | 🟢 **LATEST STABLE**| GitHub Automation & PR Management | `/usr/bin/gh` |
+| **pnpm** | `v11.21.0` | 🟢 **LATEST STABLE**| High-Performance Package Manager | `/usr/bin/pnpm` |
+| **npm** | `v10.9.2` | 🟢 **LATEST STABLE**| Node Package Manager | `/usr/bin/npm` |
+| **Cargo / Rust** | `v1.97.1` | 🟢 **LATEST STABLE**| Systems Programming Runtime & Compiler | `/root/.cargo/bin/cargo` |
+| **GCC** | `v15.2.0` | 🟢 **LATEST STABLE**| GNU C/C++ Compiler | `/usr/bin/gcc` |
+| **Make** | `v4.4.1` | 🟢 **LATEST STABLE**| Build Automation Engine | `/usr/bin/make` |
+| **Specify CLI (`specify-cli`)** | `v0.16.3.dev0` | 🟢 **ACTIVE SDD** | GitHub Spec Kit SDD Tooling | `/usr/local/bin/specify-cli` |
 
 ---
 
 ## 🗄️ Database Engines & ORMs
 
-| Software / Library | Version | Category | Description |
-| :--- | :--- | :--- | :--- |
-| **Supabase CLI** | `v2.113.0` | BaaS / Local DB | Local PostgreSQL, Auth, Storage, and Studio GUI |
-| **Drizzle ORM** | `v0.40.0` | SQL ORM | Ultra-lightweight 100% type-safe SQL ORM for TypeScript |
-| **Drizzle Kit** | `v0.30.4` | Schema CLI | Migration generator and local Drizzle Studio GUI |
-| **Postgres (`postgres-js`)** | `v3.4.5` | DB Client | Native high-performance PostgreSQL driver |
-| **TypeScript** | `v5.7.3` | Type Compiler | Modern TypeScript compiler engine (ES2024 NodeNext target) |
-| **SQLite FTS5** | `v3.x` | Vector / Search Engine | Tier 2 hybrid BM25 full-text search memory engine |
+| Software / Library | Version | Audit Status | Category | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| **Supabase CLI** | `v2.113.0` | 🟢 **LATEST 2026** | BaaS / Local DB | Local PostgreSQL, Auth, Storage, and Studio GUI |
+| **Drizzle ORM** | `v0.45.2` | 🟢 **LATEST 2026** | SQL ORM | Ultra-lightweight 100% type-safe SQL ORM for TypeScript |
+| **Drizzle Kit** | `v0.31.10` | 🟢 **LATEST 2026** | Schema CLI | Migration generator and local Drizzle Studio GUI |
+| **Postgres (`postgres-js`)** | `v3.4.9` | 🟢 **LATEST 2026** | DB Client | Native high-performance PostgreSQL driver |
+| **`@types/node`** | `v26.2.0` | 🟢 **LATEST 2026** | Types Package | Official TypeScript type definitions for Node.js v26+ |
+| **SQLite FTS5** | `v3.x` | 🟢 **ACTIVE** | Vector / Search | Tier 2 hybrid BM25 full-text search memory engine |
 
 ---
 

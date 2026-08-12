@@ -12,12 +12,12 @@
   },
   "dependencies": {
     "drizzle-orm": "^0.45.2",
-    "postgres": "3.4.9"
+    "postgres": "^3.4.9"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
     "drizzle-kit": "^0.31.10",
-    "supabase": "2.113.0",
+    "supabase": "^2.113.0",
     "typescript": "^7.0.2"
   }
 }
