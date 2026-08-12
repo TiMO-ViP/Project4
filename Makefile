@@ -101,6 +101,22 @@ db-push-cloud:
 
 db-push: db-push-local
 
+spec-init:
+	@echo "⚙️ Initializing Spec Kit..."
+	@specify init --here || echo "Spec Kit ready."
+
+spec-create:
+	@echo "📝 Creating new feature specification..."
+	@specify spec "$(NAME)"
+
+spec-plan:
+	@echo "📐 Generating technical blueprint & ADR..."
+	@specify plan "$(NAME)"
+
+spec-tasks:
+	@echo "📋 Generating executable task breakdown..."
+	@specify tasks "$(NAME)"
+
 version-audit:
 	@npm info typescript version && npm info drizzle-orm version && npm info drizzle-kit version && npm info supabase version
 
