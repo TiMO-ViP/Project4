@@ -1,5 +1,23 @@
 {
+  "name": "project4",
+  "version": "1.0.0",
+  "description": "Enterprise multi-stack project with Supabase, Drizzle ORM, and TypeScript",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "db:generate": "drizzle-kit generate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.45.2",
+    "postgres": "3.4.9"
+  },
   "devDependencies": {
-    "supabase": "2.113.0"
+    "@types/node": "^26.2.0",
+    "drizzle-kit": "^0.31.10",
+    "supabase": "2.113.0",
+    "typescript": "^7.0.2"
   }
 }
