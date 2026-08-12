@@ -36,6 +36,10 @@
 | `npm run db:studio` | `drizzle-kit studio` | Opens interactive Drizzle Studio database browser in your web browser. |
 | `make db-stop` | `npx supabase stop` | Gracefully stops all local Supabase containers. |
 
+#### Proxy Session Refresh (`src/proxy.ts` - Next.js 16+ Convention):
+* **Next.js 16+ Structural Standard**: `middleware.ts` has been replaced by `proxy.ts` (`export async function proxy(request: NextRequest)`), which defaults to the Node.js runtime for native cookie and API compatibility.
+* **Security Directives**: Always use `supabase.auth.getUser()` in `proxy.ts` to validate session JWT signatures against Supabase server-side. Never rely solely on unverified local cookies.
+
 ---
 
 ## 🛡️ Security & Environment Best Practices
