@@ -6,9 +6,10 @@
 
 ## 🛠️ Runtimes & Core Infrastructure
 
-| Tool / Runtime | Version | Status / Audit Date | Scope & Purpose | Location / Executable |
+| Tool / Runtime | Version | Status / Release Date | Key Architecture Notes | Location / Executable |
 | :--- | :--- | :--- | :--- | :--- |
-| **TypeScript** | `v7.0.2` | 🟢 **LATEST 2026** | Type compiler engine (ES2024 NodeNext target) | Installed in `node_modules` |
+| **TypeScript** | `v7.0.2` | 🟢 **STABLE (Jul 2026)** | Native Go compiler (8x-12x faster parallel checking) | Installed in `node_modules` |
+| **Next.js** | `v16.3.0` | 🟢 **ACTIVE LTS (Aug 2026)**| React 19, `proxy.ts` network boundary, Turbopack default | Installed in `node_modules` |
 | **Node.js** | `v24.19.0` | 🟢 **ACTIVE LTS** | JavaScript / TypeScript Server Runtime | `/usr/bin/node` |
 | **Python** | `v3.14.4` | 🟢 **ACTIVE STABLE**| System Automation, Log Processors & Memory Engine | `/usr/bin/python3` |
 | **Git** | `v2.53.0` | 🟢 **LATEST STABLE**| Distributed Version Control System | `/usr/bin/git` |
@@ -26,9 +27,9 @@
 
 | Software / Library | Version | Audit Status | Category | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| **Supabase CLI** | `v2.113.0` | 🟢 **LATEST 2026** | BaaS / Local DB | Local PostgreSQL, Auth, Storage, and Studio GUI |
-| **Drizzle ORM** | `v0.45.2` | 🟢 **LATEST 2026** | SQL ORM | Ultra-lightweight 100% type-safe SQL ORM for TypeScript |
-| **Drizzle Kit** | `v0.31.10` | 🟢 **LATEST 2026** | Schema CLI | Migration generator and local Drizzle Studio GUI |
+| **Supabase CLI** | `v2.113.0` | 🟢 **LATEST 2026** | BaaS / Local DB | Local PostgreSQL 17, Auth, Storage, and Studio GUI |
+| **Drizzle ORM** | `v0.45.2` | 🟢 **LATEST 2026** | SQL ORM | Ultra-lightweight ~50KB SQL ORM for TypeScript |
+| **Drizzle Kit** | `v0.31.10` | 🟢 **LATEST 2026** | Schema CLI | Transparent SQL migration generator & Studio GUI |
 | **Postgres (`postgres-js`)** | `v3.4.9` | 🟢 **LATEST 2026** | DB Client | Native high-performance PostgreSQL driver |
 | **`@types/node`** | `v26.2.0` | 🟢 **LATEST 2026** | Types Package | Official TypeScript type definitions for Node.js v26+ |
 | **SQLite FTS5** | `v3.x` | 🟢 **ACTIVE** | Vector / Search | Tier 2 hybrid BM25 full-text search memory engine |
@@ -48,13 +49,17 @@
 ├── .specify/                 # GitHub Spec Kit SDD Templates & Project Constitution
 ├── docs/                     # Documentation Portal
 │   └── manifest/             # Dedicated Tooling, Versions, and Architecture Manifests
+│       ├── SYSTEM_VERSIONS.md     # Runtimes, compilers, databases, ORMs & directory map
+│       ├── MCP_SERVERS_CATALOG.md # 9 Configured Model Context Protocol servers
+│       └── SUPABASE_STACK_GUIDE.md# Next.js 16, Supabase Local/Cloud & Drizzle handbook
 ├── src/                      # TypeScript Application Source Code
-│   └── db/                   # Drizzle ORM Schema definitions & DB Client
+│   ├── db/                   # Drizzle ORM Schema definitions & DB Client
+│   └── proxy.ts              # Next.js 16+ Node.js Runtime Network Boundary
 ├── supabase/                 # Local Supabase Scaffolding & SQL Migrations
 │   ├── config.toml           # Supabase CLI Project Configuration
 │   └── migrations/           # Version-Controlled SQL Migration Files
 ├── drizzle.config.ts         # Drizzle Kit Configuration File
-├── Makefile                  # Developer CLI Commands (make db-start, make verify)
+├── Makefile                  # Developer CLI Commands (make db-start, make version-audit)
 ├── package.json              # Node Package Manifest & NPM Scripts
 ├── pyproject.toml            # Python Ruff & Pytest Manifest
 ├── Cargo.toml                # Rust Cargo Manifest
