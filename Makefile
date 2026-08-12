@@ -55,6 +55,13 @@ sync:
 	@echo "🚀 Syncing current branch to GitHub..."
 	@bash .agents/scripts/git-superpowers.sh sync
 
+auto-commit:
+	@python3 .agents/scripts/auto_commit_on_edit.py
+
+watch-commit:
+	@python3 .agents/scripts/auto_commit_on_edit.py watch 10
+
+
 doctor:
 	@echo "🩺 Diagnosing AG Kit health status..."
 	@node .agents/hooks/antigravity-doctor.mjs || echo "AG Kit Doctor executed."
