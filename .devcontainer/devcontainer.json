@@ -20,11 +20,15 @@
       },
       "extensions": [
         "biomejs.biome",
-        "eamodio.gitlens",
+        "dbaeumer.vscode-eslint",
+        "tamasfe.even-better-toml",
+        "rust-lang.rust-analyzer",
         "charliermarsh.ruff",
+        "eamodio.gitlens",
         "github.vscode-github-actions"
       ]
     }
   },
-  "postCreateCommand": "bash .agents/scripts/setup-environment.sh all && git config core.hooksPath .githooks"
+  "postCreateCommand": "make setup-hooks && python3 .agents/scripts/generate-sbom.py"
 }
+
