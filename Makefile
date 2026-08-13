@@ -23,22 +23,20 @@ dev:
 	@bash .agents/scripts/git-enterprise-engine.sh graph
 
 lint:
-	@echo "🔍 Running static analysis linters..."
-	@bash .agents/scripts/git-auto-commit-msg.sh > /dev/null
-	@echo "✅ Linters passed."
+	@echo "🔍 Running Biome linter..."
+	@pnpm run lint
 
 format:
-	@echo "🎨 Auto-formatting code files..."
-	@echo "✅ Code formatting complete."
-
-test:
-	@echo "🧪 Executing automated test suite..."
-	@node --test .agents/scripts/run-tests.mjs
-	@echo "✅ All tests passed."
+	@echo "🎨 Running Biome formatter..."
+	@pnpm run format
 
 typecheck:
-	@echo "📐 Checking static type safety..."
-	@echo "✅ Typecheck clean."
+	@echo "📐 Running TypeScript strict type checking..."
+	@pnpm run typecheck
+
+test:
+	@echo "🧪 Running test suite..."
+	@pnpm run test
 
 check: lint format typecheck security
 	@echo "🎉 FULL PRE-FLIGHT VERIFICATION PASSED 100%!"
