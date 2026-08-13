@@ -6,18 +6,19 @@
 
 ## 🎯 Primary Directives
 
-1. **Deterministic Execution**: Always read `CODEBASE.md` and `.agents/memory/MEMORY.md` before making structural code edits.
+1. **Deterministic Execution**: Always read [.agents/memory/MEMORY.md](.agents/memory/MEMORY.md) (the Single Master Brain Hub) and [CODEBASE.md](CODEBASE.md) before making structural code edits.
 2. **Quality & Clean Code**: Adhere to `@[skills/clean-code]`. No unnecessary abstractions, no dummy fallback code, no swallowing errors.
 3. **No Unrequested Project Code**: Do NOT generate application logic or build new components without explicit user authorization.
 4. **Strict Security**: Never commit secrets, credentials, API keys, or private certificates. Validate `.gitignore` before every commit.
 5. **Automated Real-Time Session Logging**: Automatically log session boot and turn entries to `.agents/logs/live_session.jsonl` via `python3 .agents/scripts/live_session_logger.py` for 100% crash-proof persistence.
-6. **Always-Latest Package & Tooling Protocol**: Always query live package registries (`npm info`, `context7`) to ensure all installed libraries, tools, and runtimes use the absolute latest stable versions.
+6. **Always-Latest Package & Tooling Protocol**: Always query live package registries (`pnpm info`, `context7`) to ensure all installed libraries, tools, and runtimes use the absolute latest stable versions.
 
 
 ---
 
 ## 🛠️ Environment & Formatting Rules
 
+- **Package Manager**: Mandatory `pnpm` (`pnpm exec`, `pnpm run`, `pnpm install`, `pnpm info`).
 - **Indentation**: 2 spaces for JS/TS/JSON/YAML, 4 spaces for Python, tabs for Makefile (enforced by `.editorconfig`).
 - **Line Endings**: LF (`\n`).
 - **Encoding**: UTF-8 without BOM.
@@ -56,7 +57,7 @@
 ## 📁 Key Workspace Paths
 
 - `.agents/` — AG Kit agent personas, skills, workflows, and memory system.
-- `.agents/memory/MEMORY.md` — Persistent cross-session index pointer.
+- `.agents/memory/MEMORY.md` — Single Master Brain Hub & Persistent cross-session index pointer.
 - `.github/` — PR templates, issue templates, and CODEOWNERS routing.
 - `.gitmessage` — Structured commit template.
 - `.gitignore` — Exclusion manifest.
