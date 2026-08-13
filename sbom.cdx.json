@@ -1,0 +1,182 @@
+{
+  "$schema": "http://cyclonedx.org/schema/sbom-1.6.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:cf64aeeb-3211-4315-84dc-24ba70a71934",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-08-13T12:17:13.995953+00:00",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "generate-sbom",
+          "version": "1.0.0"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "name": "project4",
+      "version": "1.0.0"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/serde@1.0",
+      "name": "serde",
+      "version": "1.0",
+      "purl": "pkg:cargo/serde@1.0"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/tokio@1.0",
+      "name": "tokio",
+      "version": "1.0",
+      "purl": "pkg:cargo/tokio@1.0"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/%40biomejs/biome@1.9.4",
+      "name": "@biomejs/biome",
+      "version": "1.9.4",
+      "purl": "pkg:npm/%40biomejs/biome@1.9.4",
+      "scope": "optional"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/%40supabase/ssr@0.5.2",
+      "name": "@supabase/ssr",
+      "version": "0.5.2",
+      "purl": "pkg:npm/%40supabase/ssr@0.5.2",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/%40supabase/supabase-js@2.49.1",
+      "name": "@supabase/supabase-js",
+      "version": "2.49.1",
+      "purl": "pkg:npm/%40supabase/supabase-js@2.49.1",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/%40types/node@26.2.0",
+      "name": "@types/node",
+      "version": "26.2.0",
+      "purl": "pkg:npm/%40types/node@26.2.0",
+      "scope": "optional"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/%40types/react-dom@19.0.0",
+      "name": "@types/react-dom",
+      "version": "19.0.0",
+      "purl": "pkg:npm/%40types/react-dom@19.0.0",
+      "scope": "optional"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/%40types/react@19.0.0",
+      "name": "@types/react",
+      "version": "19.0.0",
+      "purl": "pkg:npm/%40types/react@19.0.0",
+      "scope": "optional"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/drizzle-kit@0.31.10",
+      "name": "drizzle-kit",
+      "version": "0.31.10",
+      "purl": "pkg:npm/drizzle-kit@0.31.10",
+      "scope": "optional"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/drizzle-orm@0.45.2",
+      "name": "drizzle-orm",
+      "version": "0.45.2",
+      "purl": "pkg:npm/drizzle-orm@0.45.2",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/next@16.3.0",
+      "name": "next",
+      "version": "16.3.0",
+      "purl": "pkg:npm/next@16.3.0",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/postgres@3.4.9",
+      "name": "postgres",
+      "version": "3.4.9",
+      "purl": "pkg:npm/postgres@3.4.9",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/react-dom@19.2.8",
+      "name": "react-dom",
+      "version": "19.2.8",
+      "purl": "pkg:npm/react-dom@19.2.8",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/react@19.2.8",
+      "name": "react",
+      "version": "19.2.8",
+      "purl": "pkg:npm/react@19.2.8",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/supabase@2.113.0",
+      "name": "supabase",
+      "version": "2.113.0",
+      "purl": "pkg:npm/supabase@2.113.0",
+      "scope": "optional"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/turbo@2.4.4",
+      "name": "turbo",
+      "version": "2.4.4",
+      "purl": "pkg:npm/turbo@2.4.4",
+      "scope": "optional"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/typescript@7.0.2",
+      "name": "typescript",
+      "version": "7.0.2",
+      "purl": "pkg:npm/typescript@7.0.2",
+      "scope": "optional"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/vitest@3.0.5",
+      "name": "vitest",
+      "version": "3.0.5",
+      "purl": "pkg:npm/vitest@3.0.5",
+      "scope": "optional"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pytest@8.0.0",
+      "name": "pytest",
+      "version": "8.0.0",
+      "purl": "pkg:pypi/pytest@8.0.0"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/ruff@0.5.0",
+      "name": "ruff",
+      "version": "0.5.0",
+      "purl": "pkg:pypi/ruff@0.5.0"
+    }
+  ]
+}
