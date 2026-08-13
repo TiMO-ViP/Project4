@@ -1,7 +1,7 @@
 # 📑 LIVE FILE MANIFEST & CRYPTOGRAPHIC SIGNATURE MATRIX
 
 > **AUTOMATED AUDIT & REPRODUCIBILITY MANIFEST**
-> **Timestamp Signature (UTC)**: `2026-08-13T13:40:51.578344+00:00`
+> **Timestamp Signature (UTC)**: `2026-08-13T13:44:12.292621+00:00`
 > **Total Tracked Files**: `409`
 
 ---
@@ -49,15 +49,15 @@
 | [`.agents/hooks/sync-mcp.mjs`](../../.agents/hooks/sync-mcp.mjs) | `4187` | `101` | `b56963054f34cf56` | `b56963054f34cf56b63ef9bc0e4c7cedd88a49b808c682a5341e61b8ec5db05f` |
 | [`.agents/hooks/tests/antigravity.test.mjs`](../../.agents/hooks/tests/antigravity.test.mjs) | `3564` | `80` | `5e40131265749f54` | `5e40131265749f54347470a6462dbfdf51ccef0a69165baf008b0b87443dbd5a` |
 | [`.agents/hooks/validate-tool-call.mjs`](../../.agents/hooks/validate-tool-call.mjs) | `2980` | `111` | `c8f0be06e8697efb` | `c8f0be06e8697efbfe3a2e614a3bed1a6e12c714e3faef72ca31c5fbe168e857` |
-| [`.agents/logs/CURRENT_SESSION.md`](../../.agents/logs/CURRENT_SESSION.md) | `639737` | `18806` | `6f5c35936ed5574a` | `6f5c35936ed5574a72b5fb2f059ee2ae16852b1640dbfcf5083bfa14d90b266c` |
-| [`.agents/logs/live_session.jsonl`](../../.agents/logs/live_session.jsonl) | `94969` | `82` | `8745657f88111e07` | `8745657f88111e07328b24383de51f685219170f489a83997da82fd61885e605` |
+| [`.agents/logs/CURRENT_SESSION.md`](../../.agents/logs/CURRENT_SESSION.md) | `684260` | `20047` | `beed5f995eb93d31` | `beed5f995eb93d31d248978b869452c921acea0d82f4cc16db9f5dd1a72106fd` |
+| [`.agents/logs/live_session.jsonl`](../../.agents/logs/live_session.jsonl) | `101098` | `86` | `51d2c681d23a865e` | `51d2c681d23a865eec05c8d9a5cd4c0c0b8563ed915ae060f8dcd4c8c9894a1f` |
 | [`.agents/manifest.json`](../../.agents/manifest.json) | `29004` | `1332` | `78392f4acd6db705` | `78392f4acd6db7053d4e36aea42cd6b43b6c288bc9722ea38d1cf579db0e7bc4` |
 | [`.agents/manifest.lock.json`](../../.agents/manifest.lock.json) | `24294` | `226` | `dff3c43faa69c2d3` | `dff3c43faa69c2d3c6ab172a0349429563f6760a7546ba510920b840e53e9f43` |
 | [`.agents/mcp_config.json`](../../.agents/mcp_config.json) | `1099` | `52` | `5d4799fe1d174a75` | `5d4799fe1d174a75a9a84935a40b578fb385bb75627fdf5e2a4d5bec6b22b6cf` |
-| [`.agents/memory/MEMORY.md`](../../.agents/memory/MEMORY.md) | `6421` | `111` | `aa89bfaacb0642dd` | `aa89bfaacb0642ddcf7585c2ac6329be11340a931714de347731b9dd13d5373e` |
+| [`.agents/memory/MEMORY.md`](../../.agents/memory/MEMORY.md) | `6714` | `114` | `e373368022785911` | `e373368022785911de6e15dd4c8f64c9650b3d061d745cc13749cc1b0fcce351` |
 | [`.agents/memory/feedback-history.md`](../../.agents/memory/feedback-history.md) | `138` | `9` | `06abb008293a359e` | `06abb008293a359ebf30eafaacc0212c4a21e659170f251edd354f5433bfb1a5` |
 | [`.agents/memory/project-conventions.md`](../../.agents/memory/project-conventions.md) | `2118` | `36` | `68d3b8fd8629c62b` | `68d3b8fd8629c62bd1175810c9d3972537c07f3914c7b23e733bdce75ddc0bd3` |
-| [`.agents/memory/tech-decisions.md`](../../.agents/memory/tech-decisions.md) | `2894` | `42` | `947a9003595dff87` | `947a9003595dff873f7c608c2274396d6c561a5858793f8d7b81062379b5f745` |
+| [`.agents/memory/tech-decisions.md`](../../.agents/memory/tech-decisions.md) | `3599` | `48` | `3b2d063c37b49129` | `3b2d063c37b49129ef99de03da435f1a1409d88a4f95ce9d1aefa455288d9de5` |
 | [`.agents/memory/tier2_vector.db`](../../.agents/memory/tier2_vector.db) | `32768` | `0` | `f0e55f33efe4ce6a` | `f0e55f33efe4ce6a1fc5a73b59baacc9f20b6611357418e2363a4a4501214540` |
 | [`.agents/memory/user-preferences.md`](../../.agents/memory/user-preferences.md) | `2567` | `33` | `c830819ad6c4064c` | `c830819ad6c4064c291ba839617af73ae83563d8549569e080f0aea5e46448d6` |
 | [`.agents/rules/code-rules.md`](../../.agents/rules/code-rules.md) | `4600` | `92` | `3e602c516f195dde` | `3e602c516f195ddeb6fb986aa8cead49a0ebae8a48720f738d4642146dd510a5` |
@@ -376,7 +376,7 @@
 | [`packages/utils/index.ts`](../../packages/utils/index.ts) | `956` | `35` | `10cc0cf01e545e7a` | `10cc0cf01e545e7a6856c386c128a2be4b2762b8404560ba118c37875e80ea69` |
 | [`pnpm-lock.yaml`](../../pnpm-lock.yaml) | `88852` | `2825` | `ff07dd279e970b23` | `ff07dd279e970b23254aedca70b1ca19a6a2a57eb6bdec51316ed98c70eedc95` |
 | [`pyproject.toml`](../../pyproject.toml) | `480` | `27` | `39c268e701c9a422` | `39c268e701c9a4224673bd88c26c6d7e9fea9a97be2d6cc7417adfb63310e3e8` |
-| [`sbom.cdx.json`](../../sbom.cdx.json) | `4584` | `182` | `801953c23e0d3210` | `801953c23e0d32109ad4a5f8c4a1c9cee1c15ab6f64525ae1a8a50de97ceabfe` |
+| [`sbom.cdx.json`](../../sbom.cdx.json) | `4584` | `182` | `037f9dc68f4be37f` | `037f9dc68f4be37fdc7fde88e286b6ddc4b451f7d2f45d90eb639592f5a92b27` |
 | [`skills-lock.json`](../../skills-lock.json) | `549` | `17` | `2e2775a421a15c0b` | `2e2775a421a15c0b7b6afe99ea89ea3ad96e8eba31d2aec0b460ec358983d5ed` |
 | [`src/app/globals.css`](../../src/app/globals.css) | `511` | `24` | `c877d99481fc1a3b` | `c877d99481fc1a3bc39a793fb7a934d0131c7a257a827ed9fca67511656fa7ed` |
 | [`src/app/layout.tsx`](../../src/app/layout.tsx) | `448` | `21` | `27c4669d2dec9b21` | `27c4669d2dec9b218a6712ef8faf19ffbd44a6b8a260cc7b7eca6a53cbc70af1` |
