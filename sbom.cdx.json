@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/sbom-1.6.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
-  "serialNumber": "urn:uuid:c1e036c0-b0f9-45ae-8765-d6bd733f7e38",
+  "serialNumber": "urn:uuid:efa42290-31bf-4fb9-9e08-e4d1cb67f3fd",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-08-13T13:07:22.682601+00:00",
+    "timestamp": "2026-08-13T13:13:08.865430+00:00",
     "tools": {
       "components": [
         {
@@ -38,26 +38,26 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:npm/%40biomejs/biome@1.9.4",
+      "bom-ref": "pkg:npm/%40biomejs/biome@2.5.8",
       "name": "@biomejs/biome",
-      "version": "1.9.4",
-      "purl": "pkg:npm/%40biomejs/biome@1.9.4",
+      "version": "2.5.8",
+      "purl": "pkg:npm/%40biomejs/biome@2.5.8",
       "scope": "optional"
     },
     {
       "type": "library",
-      "bom-ref": "pkg:npm/%40supabase/ssr@0.5.2",
+      "bom-ref": "pkg:npm/%40supabase/ssr@0.12.4",
       "name": "@supabase/ssr",
-      "version": "0.5.2",
-      "purl": "pkg:npm/%40supabase/ssr@0.5.2",
+      "version": "0.12.4",
+      "purl": "pkg:npm/%40supabase/ssr@0.12.4",
       "scope": "required"
     },
     {
       "type": "library",
-      "bom-ref": "pkg:npm/%40supabase/supabase-js@2.49.1",
+      "bom-ref": "pkg:npm/%40supabase/supabase-js@2.112.3",
       "name": "@supabase/supabase-js",
-      "version": "2.49.1",
-      "purl": "pkg:npm/%40supabase/supabase-js@2.49.1",
+      "version": "2.112.3",
+      "purl": "pkg:npm/%40supabase/supabase-js@2.112.3",
       "scope": "required"
     },
     {
@@ -134,18 +134,18 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:npm/supabase@2.113.0",
+      "bom-ref": "pkg:npm/supabase@2.114.0",
       "name": "supabase",
-      "version": "2.113.0",
-      "purl": "pkg:npm/supabase@2.113.0",
+      "version": "2.114.0",
+      "purl": "pkg:npm/supabase@2.114.0",
       "scope": "optional"
     },
     {
       "type": "library",
-      "bom-ref": "pkg:npm/turbo@2.4.4",
+      "bom-ref": "pkg:npm/turbo@2.10.9",
       "name": "turbo",
-      "version": "2.4.4",
-      "purl": "pkg:npm/turbo@2.4.4",
+      "version": "2.10.9",
+      "purl": "pkg:npm/turbo@2.10.9",
       "scope": "optional"
     },
     {
@@ -158,10 +158,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:npm/vitest@3.0.5",
+      "bom-ref": "pkg:npm/vitest@4.1.10",
       "name": "vitest",
-      "version": "3.0.5",
-      "purl": "pkg:npm/vitest@3.0.5",
+      "version": "4.1.10",
+      "purl": "pkg:npm/vitest@4.1.10",
       "scope": "optional"
     },
     {
