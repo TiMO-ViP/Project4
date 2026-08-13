@@ -17,6 +17,7 @@
     "lint": "biome check ./src",
     "format": "biome format --write ./src",
     "typecheck": "tsc --noEmit",
+    "pipeline": "turbo run lint typecheck test",
     "db:generate": "drizzle-kit generate",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio"
@@ -37,6 +38,7 @@
     "@types/react-dom": "^19.0.0",
     "drizzle-kit": "^0.31.10",
     "supabase": "^2.113.0",
+    "turbo": "^2.4.4",
     "typescript": "^7.0.2",
     "vitest": "^3.0.5"
   }

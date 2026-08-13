@@ -1,5 +1,5 @@
 # Master Enterprise Makefile for Project Governance & Automation
-.PHONY: help dev setup-hooks lint format test typecheck check security prune sync clean doctor
+.PHONY: help dev setup-hooks lint format test typecheck pipeline check security prune sync clean doctor
 
 help:
 	@echo "⚡ Master Project Governance & Automation CLI"
@@ -11,7 +11,8 @@ help:
 	@echo "  make format      Auto-format codebase"
 	@echo "  make test        Run automated unit and integration tests"
 	@echo "  make typecheck   Run strict type checking"
-	@echo "  make check       Run FULL pre-flight audit (lint + format + typecheck + security)"
+	@echo "  make pipeline    Execute Turborepo cached check pipeline"
+	@echo "  make check       Run FULL pre-flight audit (pipeline + format + security)"
 	@echo "  make security    Run Gitleaks secret scanner & vulnerability audit"
 	@echo "  make prune       Clean merged Git branches and orphaned worktrees"
 	@echo "  make sync        Push current branch to GitHub origin safely"
@@ -44,6 +45,10 @@ typecheck:
 test:
 	@echo "🧪 Running test suite..."
 	@pnpm run test
+
+pipeline: setup-hooks
+	@echo "⚡ Running Turborepo pipeline caching..."
+	@pnpm run pipeline
 
 check: setup-hooks lint format typecheck security
 	@echo "🎉 FULL PRE-FLIGHT VERIFICATION PASSED 100%!"
