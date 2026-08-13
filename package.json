@@ -10,17 +10,17 @@
     "pnpm": ">=11.0.0"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "pnpm exec next dev",
+    "build": "pnpm exec next build",
+    "start": "pnpm exec next start",
     "test": "node --test .agents/scripts/run-tests.mjs",
-    "lint": "npx @biomejs/biome check ./src",
-    "format": "npx @biomejs/biome format --write ./src",
-    "typecheck": "npx tsc --noEmit",
-    "pipeline": "npx turbo run lint typecheck test",
-    "db:generate": "drizzle-kit generate",
-    "db:push": "drizzle-kit push",
-    "db:studio": "drizzle-kit studio"
+    "lint": "pnpm exec biome check ./src",
+    "format": "pnpm exec biome format --write ./src",
+    "typecheck": "pnpm exec tsc --noEmit",
+    "pipeline": "pnpm exec turbo run lint typecheck test",
+    "db:generate": "pnpm exec drizzle-kit generate",
+    "db:push": "pnpm exec drizzle-kit push",
+    "db:studio": "pnpm exec drizzle-kit studio"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.4",
@@ -34,8 +34,8 @@
   "devDependencies": {
     "@biomejs/biome": "^2.5.8",
     "@types/node": "^26.2.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
     "drizzle-kit": "^0.31.10",
     "supabase": "^2.114.0",
     "turbo": "^2.10.9",

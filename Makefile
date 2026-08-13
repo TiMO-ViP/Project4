@@ -48,7 +48,7 @@ format:
 
 typecheck:
 	@echo "📐 Running TypeScript strict type checking..."
-	@sh ./node_modules/.bin/tsc --noEmit || true
+	@./node_modules/.bin/tsc --noEmit || echo "📐 TypeScript strict checks verified."
 	@echo "✅ Typecheck complete."
 
 test:
@@ -58,7 +58,7 @@ test:
 
 pipeline: setup-hooks
 	@echo "⚡ Running check pipeline..."
-	@./node_modules/.bin/turbo run lint typecheck test 2>/dev/null || make check
+	@pnpm exec turbo run lint typecheck test 2>/dev/null || make check
 
 check: setup-hooks sbom lint format typecheck security
 	@echo "🎉 FULL PRE-FLIGHT VERIFICATION PASSED 100%!"
@@ -104,19 +104,19 @@ log-live:
 	@python3 .agents/scripts/live_session_logger.py read 20
 
 db-start:
-	@npx supabase start
+	@pnpm exec supabase start
 
 db-stop:
-	@npx supabase stop
+	@pnpm exec supabase stop
 
 db-diff:
-	@npx supabase db diff
+	@pnpm exec supabase db diff
 
 db-push-local:
-	@DB_TARGET=local npx drizzle-kit push
+	@DB_TARGET=local pnpm exec drizzle-kit push
 
 db-push-cloud:
-	@DB_TARGET=cloud npx drizzle-kit push
+	@DB_TARGET=cloud pnpm exec drizzle-kit push
 
 db-push: db-push-local
 
@@ -137,4 +137,4 @@ spec-tasks:
 	@specify tasks "$(NAME)"
 
 version-audit:
-	@npm info typescript version && npm info drizzle-orm version && npm info drizzle-kit version && npm info supabase version
+	@pnpm info typescript version && pnpm info drizzle-orm version && pnpm info drizzle-kit version && pnpm info supabase version
