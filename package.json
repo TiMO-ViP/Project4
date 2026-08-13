@@ -16,6 +16,7 @@
     "test": "node --test .agents/scripts/run-tests.mjs",
     "lint": "biome check ./src",
     "format": "biome format --write ./src",
+    "typecheck": "tsc --noEmit",
     "db:generate": "drizzle-kit generate",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio"
