@@ -1,7 +1,7 @@
 ---
 type: reference
 created: 2026-08-11
-updated: 2026-08-11
+updated: 2026-08-13
 ---
 
 # Architectural Decision Records (ADR) Memory
@@ -40,3 +40,9 @@ updated: 2026-08-11
 - **Decision**: Scaffold modular directory structure under `packages/` (`packages/types`, `packages/config`, `packages/utils`) mapped via TypeScript path aliases (`@project4/types`, `@project4/config`, `@project4/utils`).
 - **Implementation**: Promotes reusability across microservices/apps, isolating core interfaces, runtime configurations, and functional utilities.
 
+## ADR 10: Cryptographic Live File Manifest (`make manifest`)
+- **Decision**: Implement `.agents/scripts/generate-live-manifest.py` to generate timestamped SHA-256 signature matrices for all repository files at `docs/manifest/LIVE_FILE_MANIFEST.md`.
+- **Implementation**: Excludes virtual store paths and self-scanned output files to guarantee 100% reproducible diff verification.
+
+## ADR 11: AG Kit Health Diagnosis Contract & Operator Docs (`MIGRATION.md`)
+- **Decision**: Enforce 100% `make doctor` diagnostic contract readiness across 6 phases (`discovery`, `mcp`, `hooks`, `orchestration`, `plugin`, `validation`) and mandate production operator documentation ([`MIGRATION.md`](../../MIGRATION.md)).

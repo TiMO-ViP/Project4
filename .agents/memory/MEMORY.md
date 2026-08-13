@@ -48,23 +48,25 @@ graph TD
 
 ---
 
-## 3. 📜 Technical Decisions & ADRs (ADRs 1–9)
+## 3. 📜 Technical Decisions & ADRs (ADRs 1–11)
 * **[Read All Architecture Decision Records (`tech-decisions.md`)](tech-decisions.md)**
 * **ADR 1**: Client-side secret scanning via `.githooks/pre-commit` (Gitleaks).
-* **ADR 2**: Subsecond linters & formatters via Biome (`@biomejs/biome@2.5.8`).
-* **ADR 3**: Enterprise 1-Click DevContainer (`.devcontainer/devcontainer.json`).
-* **ADR 4**: Corepack `pnpm@11.21.0` locking & Node `>=24.0.0` engine constraints.
-* **ADR 5**: Turborepo build pipeline caching (`turbo.json`).
+* **ADR 2**: Git Conflict Memory (`rerere`).
+* **ADR 3**: Machine audit metadata via `git notes --ref=ai-audit`.
+* **ADR 4**: Subsecond linters & formatters via Biome (`@biomejs/biome@2.5.8`).
+* **ADR 5**: Enterprise 1-Click DevContainer (`.devcontainer/devcontainer.json`).
 * **ADR 6**: Strict Zero-Crash TypeScript 5.7+ compiler flags (`tsconfig.json`).
 * **ADR 7**: OpenTelemetry v1.34 structured tracing (`src/infrastructure/telemetry/tracer.ts`).
 * **ADR 8**: CycloneDX v1.6 SBOM supply-chain inventory (`make sbom` -> `sbom.cdx.json`).
 * **ADR 9**: Monorepo package backbone (`@project4/types`, `@project4/config`, `@project4/utils`).
+* **ADR 10**: Cryptographic Live File Manifest (`make manifest` -> `docs/manifest/LIVE_FILE_MANIFEST.md`).
+* **ADR 11**: AG Kit Health Diagnosis Contract readiness (`make doctor` 6/6 PASS) & `MIGRATION.md`.
 
 ---
 
 ## 4. 📊 Active Workspace Status & Health
 * **[Read Live Workspace Status Board (`STATUS.md`)](../../STATUS.md)**
-* **Environment Health**: 100% PASS on `make check` (manifest + sbom + lint + format + typecheck + security).
+* **Environment Health**: 100% PASS on `make check` (manifest + sbom + lint + format + typecheck + security) and `make doctor`.
 * **Active Integration Branch**: `develop` (Clean, fully synced with 2026 enterprise standards).
 
 ---
@@ -97,6 +99,7 @@ graph TD
 - 🗺️ **[CODEBASE.md](../../CODEBASE.md)** — System Architecture Topology & Dependency Matrix
 - 📊 **[STATUS.md](../../STATUS.md)** — Interactive Workspace Status Board
 - 🖼️ **[README.md](../../README.md)** — Visual Master README & Feature Matrix
+- 🗄️ **[MIGRATION.md](../../MIGRATION.md)** — Production Migration & Operator Documentation
 - 🔒 **[SECURITY.md](../../SECURITY.md)** — Vulnerability Reporting Policy
 - 🤝 **[CONTRIBUTING.md](../../CONTRIBUTING.md)** — Contribution & Branching Guidelines
 - 📜 **[CHANGELOG.md](../../CHANGELOG.md)** — Keep-a-Changelog Version History
