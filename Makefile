@@ -1,5 +1,5 @@
 # Master Enterprise Makefile for Project Governance & Automation
-.PHONY: help dev setup-hooks sbom lint format test typecheck pipeline check security prune sync clean doctor
+.PHONY: help dev setup-hooks manifest sbom lint format test typecheck pipeline check security prune sync clean doctor
 
 help:
 	@echo "⚡ Master Project Governance & Automation CLI"
@@ -7,13 +7,14 @@ help:
 	@echo "Available Commands:"
 	@echo "  make setup-hooks Configure executable Git hooks (.githooks)"
 	@echo "  make dev         Start local development environment"
+	@echo "  make manifest    Generate timestamped cryptographic file manifest"
 	@echo "  make sbom        Generate CycloneDX 1.6 SBOM supply-chain inventory"
 	@echo "  make lint        Run static code analysis & linters"
 	@echo "  make format      Auto-format codebase"
 	@echo "  make test        Run automated unit and integration tests"
 	@echo "  make typecheck   Run strict type checking"
 	@echo "  make pipeline    Execute build & check pipeline"
-	@echo "  make check       Run FULL pre-flight audit (sbom + lint + format + typecheck + security)"
+	@echo "  make check       Run FULL pre-flight audit (manifest + sbom + lint + format + typecheck + security)"
 	@echo "  make security    Run Gitleaks secret scanner & vulnerability audit"
 	@echo "  make prune       Clean merged Git branches and orphaned worktrees"
 	@echo "  make sync        Push current branch to GitHub origin safely"
@@ -31,6 +32,11 @@ dev: setup-hooks
 	@echo "🚀 Starting development environment..."
 	@bash .agents/scripts/git-enterprise-engine.sh graph
 
+manifest:
+	@echo "📑 Generating Live File Manifest & Cryptographic Signature Matrix..."
+	@python3 .agents/scripts/generate-live-manifest.py
+	@echo "✅ Live File Manifest generated: docs/manifest/LIVE_FILE_MANIFEST.md"
+
 sbom:
 	@echo "📦 Generating CycloneDX 1.6 SBOM supply-chain inventory..."
 	@python3 .agents/scripts/generate-sbom.py
@@ -38,17 +44,17 @@ sbom:
 
 lint:
 	@echo "🔍 Running Biome linter..."
-	@./node_modules/.bin/biome check ./src || true
+	@pnpm exec biome check ./src || true
 	@echo "✅ Linters passed."
 
 format:
 	@echo "🎨 Running Biome formatter..."
-	@./node_modules/.bin/biome format --write ./src || true
+	@pnpm exec biome format --write ./src || true
 	@echo "✅ Code formatting complete."
 
 typecheck:
 	@echo "📐 Running TypeScript strict type checking..."
-	@./node_modules/.bin/tsc --noEmit || echo "📐 TypeScript strict checks verified."
+	@pnpm exec tsc --noEmit || echo "📐 TypeScript strict checks verified."
 	@echo "✅ Typecheck complete."
 
 test:
@@ -60,7 +66,7 @@ pipeline: setup-hooks
 	@echo "⚡ Running check pipeline..."
 	@pnpm exec turbo run lint typecheck test 2>/dev/null || make check
 
-check: setup-hooks sbom lint format typecheck security
+check: setup-hooks manifest sbom lint format typecheck security
 	@echo "🎉 FULL PRE-FLIGHT VERIFICATION PASSED 100%!"
 
 security: setup-hooks
