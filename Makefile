@@ -48,7 +48,7 @@ format:
 
 typecheck:
 	@echo "📐 Running TypeScript strict type checking..."
-	@./node_modules/.bin/tsc --noEmit || true
+	@sh ./node_modules/.bin/tsc --noEmit || true
 	@echo "✅ Typecheck complete."
 
 test:
