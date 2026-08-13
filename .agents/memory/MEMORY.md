@@ -28,9 +28,9 @@ graph TD
 * **Directive 6 - Always-Latest Package Protocol**: Always query live registries (`pnpm info <pkg> version`, `context7` live docs) before adopting or upgrading dependencies.
 * **Framework Guidelines**:
   - **Next.js v16.3.0+**: Network boundary at `src/proxy.ts` (export `proxy()`), explicit `use cache` directive with `cacheComponents: true` in `next.config.ts`, React 19 Compiler auto-memoization, `use()` hook for server promises.
-  - **Supabase v2.114.0+**: `@supabase/ssr` cookie auth handling, B-tree indexed RLS policies (`auth.uid() = user_id`).
+  - **Supabase CLI v2.114.0+**: `@supabase/ssr` cookie auth handling, B-tree indexed RLS policies (`auth.uid() = user_id`).
   - **Drizzle ORM v0.45.2+**: Version-controlled SQL migrations in `supabase/migrations/`.
-  - **TypeScript v7.0.2+**: Zero-crash strict flags (`"strict": true`, `"noUncheckedIndexedAccess": true`, `"exactOptionalPropertyTypes": true`).
+  - **TypeScript v5.7+**: Zero-crash strict flags (`"strict": true`, `"noUncheckedIndexedAccess": true`, `"exactOptionalPropertyTypes": true`).
   - **OpenTelemetry v1.34**: Structured JSON logging with W3C `traceparent` context propagation (`src/infrastructure/telemetry/tracer.ts`).
 
 ---
@@ -64,7 +64,7 @@ graph TD
 
 ## 4. 📊 Active Workspace Status & Health
 * **[Read Live Workspace Status Board (`STATUS.md`)](../../STATUS.md)**
-* **Environment Health**: 100% PASS on `make check` (sbom + lint + format + typecheck + security).
+* **Environment Health**: 100% PASS on `make check` (manifest + sbom + lint + format + typecheck + security).
 * **Active Integration Branch**: `develop` (Clean, fully synced with 2026 enterprise standards).
 
 ---
@@ -80,8 +80,9 @@ graph TD
 
 | Command | Purpose |
 | :--- | :--- |
-| **`make check`** | Run full 6-stage pre-flight audit (sbom + lint + format + typecheck + security). |
+| **`make check`** | Run full 7-stage pre-flight audit (manifest + sbom + lint + format + typecheck + security). |
 | **`make test`** | Run automated unit and integration test suite. |
+| **`make manifest`** | Generate timestamped cryptographic file manifest (`docs/manifest/LIVE_FILE_MANIFEST.md`). |
 | **`make sbom`** | Generate CycloneDX 1.6 SBOM inventory (`sbom.cdx.json`). |
 | **`make db-start`** | Start local Supabase Postgres 17, Auth, Storage, & Studio GUI. |
 | **`make db-push`** | Push local Drizzle ORM migrations to cloud database. |
@@ -99,6 +100,7 @@ graph TD
 - 🔒 **[SECURITY.md](../../SECURITY.md)** — Vulnerability Reporting Policy
 - 🤝 **[CONTRIBUTING.md](../../CONTRIBUTING.md)** — Contribution & Branching Guidelines
 - 📜 **[CHANGELOG.md](../../CHANGELOG.md)** — Keep-a-Changelog Version History
+- 📜 **[Live File Manifest](docs/manifest/LIVE_FILE_MANIFEST.md)** — Cryptographic Signature File Manifest
 - 📜 **[Project Constitution](../../.specify/memory/constitution.md)** — Ratified SDD Project Constitution
 
 ---

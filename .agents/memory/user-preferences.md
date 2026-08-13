@@ -19,12 +19,12 @@
      - Caching Strategy: Enable `cacheComponents: true` in `next.config.ts` and use the explicit `use cache` directive with `cacheLife()`.
      - React 19: Utilize built-in React Compiler automatic memoization; consume Server Promises in Client Components via the `use()` hook.
      - Security: Enforce strict Server Actions input validation and cookie auth boundaries.
-   * **Supabase v2.112.3+**:
+   * **Supabase CLI v2.114.0+**:
      - Use `@supabase/ssr` for server-side auth cookie handling (`createBrowserClient`, `createServerClient`).
      - Enforce Row Level Security (RLS) policies with B-tree indexes (`auth.uid() = user_id`).
    * **Drizzle ORM v0.45.2+**:
      - Maintain version-controlled SQL migrations under `supabase/migrations/`.
-   * **TypeScript v7.0.2+**:
+   * **TypeScript v5.7+**:
      - Zero-crash strict flags: `"strict": true`, `"noUncheckedIndexedAccess": true`, `"exactOptionalPropertyTypes": true`.
    * **OpenTelemetry v1.34**:
      - Structured JSON logging with W3C `traceparent` context propagation (`00-<trace_id>-<span_id>-01`).
