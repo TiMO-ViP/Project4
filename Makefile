@@ -1,10 +1,11 @@
 # Master Enterprise Makefile for Project Governance & Automation
-.PHONY: help dev lint format test typecheck check security prune sync clean doctor
+.PHONY: help dev setup-hooks lint format test typecheck check security prune sync clean doctor
 
 help:
 	@echo "⚡ Master Project Governance & Automation CLI"
 	@echo ""
 	@echo "Available Commands:"
+	@echo "  make setup-hooks Configure executable Git hooks (.githooks)"
 	@echo "  make dev         Start local development environment"
 	@echo "  make lint        Run static code analysis & linters"
 	@echo "  make format      Auto-format codebase"
@@ -18,7 +19,13 @@ help:
 	@echo "  make clean       Clean build artifacts and temporary caches"
 	@echo ""
 
-dev:
+setup-hooks:
+	@echo "⚙️ Binding & configuring executable native Git hooks..."
+	@chmod +x .githooks/* .agents/scripts/*.sh 2>/dev/null || true
+	@git config core.hooksPath .githooks
+	@echo "✅ Native Git hooks bound to .githooks cleanly."
+
+dev: setup-hooks
 	@echo "🚀 Starting development environment..."
 	@bash .agents/scripts/git-enterprise-engine.sh graph
 
@@ -38,10 +45,10 @@ test:
 	@echo "🧪 Running test suite..."
 	@pnpm run test
 
-check: lint format typecheck security
+check: setup-hooks lint format typecheck security
 	@echo "🎉 FULL PRE-FLIGHT VERIFICATION PASSED 100%!"
 
-security:
+security: setup-hooks
 	@echo "🔒 Executing secret scanning & security audit..."
 	@bash .githooks/pre-commit
 	@echo "✅ Security audit passed."
@@ -59,7 +66,6 @@ auto-commit:
 
 watch-commit:
 	@python3 .agents/scripts/auto_commit_on_edit.py watch 10
-
 
 doctor:
 	@echo "🩺 Diagnosing AG Kit health status..."
@@ -117,8 +123,3 @@ spec-tasks:
 
 version-audit:
 	@npm info typescript version && npm info drizzle-orm version && npm info drizzle-kit version && npm info supabase version
-
-
-
-
-
