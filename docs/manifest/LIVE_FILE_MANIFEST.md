@@ -1,7 +1,7 @@
 # 📑 LIVE FILE MANIFEST & CRYPTOGRAPHIC SIGNATURE MATRIX
 
 > **AUTOMATED AUDIT & REPRODUCIBILITY MANIFEST**
-> **Timestamp Signature (UTC)**: `2026-08-13T13:32:01.449614+00:00`
+> **Timestamp Signature (UTC)**: `2026-08-13T13:36:27.490489+00:00`
 > **Total Tracked Files**: `408`
 
 ---
@@ -49,8 +49,8 @@
 | [`.agents/hooks/sync-mcp.mjs`](../../.agents/hooks/sync-mcp.mjs) | `4187` | `101` | `b56963054f34cf56` | `b56963054f34cf56b63ef9bc0e4c7cedd88a49b808c682a5341e61b8ec5db05f` |
 | [`.agents/hooks/tests/antigravity.test.mjs`](../../.agents/hooks/tests/antigravity.test.mjs) | `3564` | `80` | `5e40131265749f54` | `5e40131265749f54347470a6462dbfdf51ccef0a69165baf008b0b87443dbd5a` |
 | [`.agents/hooks/validate-tool-call.mjs`](../../.agents/hooks/validate-tool-call.mjs) | `2980` | `111` | `c8f0be06e8697efb` | `c8f0be06e8697efbfe3a2e614a3bed1a6e12c714e3faef72ca31c5fbe168e857` |
-| [`.agents/logs/CURRENT_SESSION.md`](../../.agents/logs/CURRENT_SESSION.md) | `592758` | `17470` | `10758f1a47492a7e` | `10758f1a47492a7eff1709de2a5a6af1e42066b2ad87d5063aafcda151c0049b` |
-| [`.agents/logs/live_session.jsonl`](../../.agents/logs/live_session.jsonl) | `86286` | `78` | `0ea58661f5a79f2a` | `0ea58661f5a79f2af7551dd826656fe8b5f7033f233a125f862595f429ae8679` |
+| [`.agents/logs/CURRENT_SESSION.md`](../../.agents/logs/CURRENT_SESSION.md) | `621776` | `18301` | `c47305798dbf54a8` | `c47305798dbf54a804dbc9d475000b519fe8763a83583df8607550cb269d3f74` |
+| [`.agents/logs/live_session.jsonl`](../../.agents/logs/live_session.jsonl) | `91066` | `81` | `70da22ab212918b9` | `70da22ab212918b924c76050687c3a644e2751df211f6ee10aa807c997459a4e` |
 | [`.agents/manifest.json`](../../.agents/manifest.json) | `29004` | `1332` | `78392f4acd6db705` | `78392f4acd6db7053d4e36aea42cd6b43b6c288bc9722ea38d1cf579db0e7bc4` |
 | [`.agents/manifest.lock.json`](../../.agents/manifest.lock.json) | `24294` | `226` | `dff3c43faa69c2d3` | `dff3c43faa69c2d3c6ab172a0349429563f6760a7546ba510920b840e53e9f43` |
 | [`.agents/mcp_config.json`](../../.agents/mcp_config.json) | `1105` | `52` | `ec71816426c6e9d8` | `ec71816426c6e9d8989ff88300adf5568f2d6b89ad48fa50b52c84bff7e81574` |
@@ -348,7 +348,7 @@
 | [`DESIGN.md`](../../DESIGN.md) | `2287` | `72` | `2ea33130c17a85a6` | `2ea33130c17a85a61a2721a117352f452f4a6b19356ffede0a5f2ba9763984c3` |
 | [`Dockerfile`](../../Dockerfile) | `262` | `12` | `cc30a3aebca65f1d` | `cc30a3aebca65f1dcfad2387c7be35c3d59d7cc8b837895ebc4fff2616beb328` |
 | [`LICENSE`](../../LICENSE) | `1070` | `21` | `0780ed9170ac9b90` | `0780ed9170ac9b90998554f71fe6ef3570f64794f65e9b89c803584c2d1ca208` |
-| [`Makefile`](../../Makefile) | `4772` | `146` | `50bc204c5399b7fc` | `50bc204c5399b7fc66026755f6a523ca934cd44dd4a14870228e86f2cbae1491` |
+| [`Makefile`](../../Makefile) | `4812` | `146` | `8979157e08c87a10` | `8979157e08c87a1002e4ae80058e3f3b4fcd066166ea322de245614d135bd8a4` |
 | [`New Folder/text.txt`](../../New Folder/text.txt) | `1797` | `39` | `d8a9c3fd69179414` | `d8a9c3fd6917941496af9aa099dbfb06a33ee69ec246746742ff91f9aa9012f8` |
 | [`README.md`](../../README.md) | `9816` | `157` | `1298dcca2407a617` | `1298dcca2407a617019651632ca6a8e35cb304f7a4b3724d9c7e96c8a64c7171` |
 | [`SECURITY.md`](../../SECURITY.md) | `1241` | `26` | `efe75e670661b429` | `efe75e670661b429c9bb4b321aee8b48503dc101c9d2278c39810bc8e90786e8` |
@@ -375,7 +375,7 @@
 | [`packages/utils/index.ts`](../../packages/utils/index.ts) | `956` | `35` | `10cc0cf01e545e7a` | `10cc0cf01e545e7a6856c386c128a2be4b2762b8404560ba118c37875e80ea69` |
 | [`pnpm-lock.yaml`](../../pnpm-lock.yaml) | `88852` | `2825` | `ff07dd279e970b23` | `ff07dd279e970b23254aedca70b1ca19a6a2a57eb6bdec51316ed98c70eedc95` |
 | [`pyproject.toml`](../../pyproject.toml) | `480` | `27` | `39c268e701c9a422` | `39c268e701c9a4224673bd88c26c6d7e9fea9a97be2d6cc7417adfb63310e3e8` |
-| [`sbom.cdx.json`](../../sbom.cdx.json) | `4584` | `182` | `639c79b86afc5bd9` | `639c79b86afc5bd9c00c4361df26259b9c5e6d41458669714fef95478f125a49` |
+| [`sbom.cdx.json`](../../sbom.cdx.json) | `4584` | `182` | `ca785e2c728d05cd` | `ca785e2c728d05cd88c8b01f3f75d5678ac54d1bb290350be6aaff1f36b6e8aa` |
 | [`skills-lock.json`](../../skills-lock.json) | `549` | `17` | `2e2775a421a15c0b` | `2e2775a421a15c0b7b6afe99ea89ea3ad96e8eba31d2aec0b460ec358983d5ed` |
 | [`src/app/globals.css`](../../src/app/globals.css) | `511` | `24` | `c877d99481fc1a3b` | `c877d99481fc1a3bc39a793fb7a934d0131c7a257a827ed9fca67511656fa7ed` |
 | [`src/app/layout.tsx`](../../src/app/layout.tsx) | `448` | `21` | `27c4669d2dec9b21` | `27c4669d2dec9b218a6712ef8faf19ffbd44a6b8a260cc7b7eca6a53cbc70af1` |
