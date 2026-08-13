@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { User } from '../../src/domain/user/user.ts';
 import { CreateUserUseCase } from '../../src/application/user/create-user.usecase.ts';
 import { GetUserProfileUseCase } from '../../src/application/user/get-user-profile.usecase.ts';
+import '../../tests/unit/telemetry/tracer.test.mjs';
+
 
 class InMemoryUserRepository {
   constructor() {
