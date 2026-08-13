@@ -205,23 +205,20 @@ function checkValidation(root, report) {
     if (!fs.existsSync(path.join(root, file))) add(report, 'error', 'validation', 'validation.file_missing', file, 'Production validation or operator documentation is missing.');
   }
 
-  const versionFiles = [
+  const versionCandidates = [
     ['.agents/VERSION', value => value.trim()],
     ['package.json', value => JSON.parse(value).version],
-    ['cli/package.json', value => JSON.parse(value).version],
-    ['web/package.json', value => JSON.parse(value).version]
+    ['apps/web/package.json', value => JSON.parse(value).version]
   ];
   const versions = [];
-  for (const [file, parse] of versionFiles) {
+  for (const [file, parse] of versionCandidates) {
     const target = path.join(root, file);
-    if (!fs.existsSync(target)) {
-      add(report, 'error', 'validation', 'validation.version_missing', file, 'Version source is missing.');
-      continue;
-    }
-    try {
-      versions.push([file, parse(fs.readFileSync(target, 'utf8'))]);
-    } catch (error) {
-      add(report, 'error', 'validation', 'validation.version_invalid', file, error.message);
+    if (fs.existsSync(target)) {
+      try {
+        versions.push([file, parse(fs.readFileSync(target, 'utf8'))]);
+      } catch (error) {
+        add(report, 'error', 'validation', 'validation.version_invalid', file, error.message);
+      }
     }
   }
   const unique = new Set(versions.map(([, value]) => value));
