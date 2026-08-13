@@ -13,10 +13,13 @@
 | **CI/CD Pipeline** | 🟢 GitHub Actions Active | `.github/workflows/ci.yml` live |
 | **CLI Automation** | 🟢 Master Makefile Ready | `make help` operational |
 | **DevContainer** | 🟢 Configured (`.devcontainer/`) | VS Code / Codespaces ready |
+| **Package Manager** | 🟢 Corepack & pnpm v11.21 Locked | `package.json` engines & Corepack enforced |
+| **Build System** | 🟢 Turborepo (`turbo.json`) | Build and task pipeline caching enabled |
+| **Database CLI** | 🟢 Supabase & Drizzle ORM | Local Supabase CLI and Drizzle ORM operational |
 
 ---
 
-## 🎯 Current Milestone: Phase 1 — Environment Initialization
+## 🎯 Current Milestone: Phase 1 — Environment Initialization & Enterprise Upgrade
 
 - [x] Initialize Git repository & branch protection rules (`main`).
 - [x] Set up `.gitignore`, `.editorconfig`, `.env.example`.
@@ -26,10 +29,14 @@
 - [x] Build Git Superpowers helper script (`.agents/scripts/git-enterprise-engine.sh`).
 - [x] Build unified master `Makefile` for single-word developer CLI automation.
 - [x] Create DevContainer (`.devcontainer/`), `Dockerfile`, and `docker-compose.yml`.
+- [x] Lock Corepack & pnpm v11.21 package manager in `package.json`.
+- [x] Configure Turborepo (`turbo.json`) build and pipeline caching.
+- [x] Upgrade Makefile to delegate lint, format, typecheck, and test via pnpm.
+- [x] Operationalize local Supabase CLI and Drizzle ORM workflows (`make db-start`, `make db-push`).
 - [ ] Begin application domain architecture and implementation planning (`{task-slug}.md`).
 
 ---
 
 ## 🌲 Active Branches & Worktrees
 
-- `main` — Primary production branch (Clean, synced to GitHub origin).
+- `develop` — Primary active branch (Clean, synced with enterprise environment upgrades).
