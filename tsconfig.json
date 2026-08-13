@@ -15,8 +15,13 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "declaration": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "paths": {
+      "@project4/types": ["./packages/types/index.ts"],
+      "@project4/config": ["./packages/config/index.ts"],
+      "@project4/utils": ["./packages/utils/index.ts"]
+    }
   },
-  "include": ["src/**/*", "drizzle.config.ts"],
+  "include": ["src/**/*", "packages/**/*", "drizzle.config.ts"],
   "exclude": ["node_modules", "dist"]
 }
