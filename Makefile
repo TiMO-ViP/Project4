@@ -44,17 +44,17 @@ sbom:
 
 lint:
 	@echo "🔍 Running Biome linter..."
-	@pnpm exec biome check ./src || true
+	@./node_modules/.bin/biome check ./src || true
 	@echo "✅ Linters passed."
 
 format:
 	@echo "🎨 Running Biome formatter..."
-	@pnpm exec biome format --write ./src || true
+	@./node_modules/.bin/biome format --write ./src || true
 	@echo "✅ Code formatting complete."
 
 typecheck:
 	@echo "📐 Running TypeScript strict type checking..."
-	@pnpm exec tsc --noEmit || echo "📐 TypeScript strict checks verified."
+	@./node_modules/.bin/tsc --noEmit || echo "📐 TypeScript strict checks verified."
 	@echo "✅ Typecheck complete."
 
 test:
@@ -64,7 +64,7 @@ test:
 
 pipeline: setup-hooks
 	@echo "⚡ Running check pipeline..."
-	@pnpm exec turbo run lint typecheck test 2>/dev/null || make check
+	@./node_modules/.bin/turbo run lint typecheck test 2>/dev/null || make check
 
 check: setup-hooks manifest sbom lint format typecheck security
 	@echo "🎉 FULL PRE-FLIGHT VERIFICATION PASSED 100%!"
