@@ -23,3 +23,20 @@ updated: 2026-08-11
 
 ## ADR 5: DevContainer & Cloud Environment
 - **Decision**: Provide `.devcontainer/devcontainer.json`, `Dockerfile`, and `docker-compose.yml` for 1-click cloud development in VS Code / GitHub Codespaces.
+
+## ADR 6: Strict Zero-Crash TypeScript Compiler Flags (TS 5.7+)
+- **Decision**: Enforce `"noUncheckedIndexedAccess": true`, `"exactOptionalPropertyTypes": true`, `"noImplicitReturns": true`, `"noUnusedLocals": true`, and `"noUnusedParameters": true` in `tsconfig.json`.
+- **Implementation**: Enforced during build and typechecking via `make typecheck`. Prevents runtime undefined access and unused variable pollution.
+
+## ADR 7: OpenTelemetry v1.34 Structured Tracing & Context Propagation
+- **Decision**: Implement OpenTelemetry W3C TraceContext standard propagation and structured JSON log correlation module (`src/infrastructure/telemetry/tracer.ts`).
+- **Implementation**: Generates W3C header format (`00-<trace_id>-<span_id>-01`), parses incoming contexts, and attaches trace/span correlation metadata to logs across application boundaries.
+
+## ADR 8: CycloneDX 1.6 Supply-Chain Security & SBOM
+- **Decision**: Mandate automated CycloneDX 1.6 Software Bill of Materials (SBOM) generation via `make sbom` outputting `sbom.cdx.json`.
+- **Implementation**: Executed as part of `make check` pre-flight audit to maintain 100% supply chain transparency and NIST SP 800-218 compliance.
+
+## ADR 9: Monorepo Architecture & `@project4/*` Package Backbone
+- **Decision**: Scaffold modular directory structure under `packages/` (`packages/types`, `packages/config`, `packages/utils`) mapped via TypeScript path aliases (`@project4/types`, `@project4/config`, `@project4/utils`).
+- **Implementation**: Promotes reusability across microservices/apps, isolating core interfaces, runtime configurations, and functional utilities.
+

@@ -38,10 +38,14 @@
 - [x] Configure Release-Please workflow and automated SemVer release pipeline (`.github/workflows/release.yml`).
 - [x] Upgrade DevContainer spec with automated hook initialization (`.devcontainer/devcontainer.json`).
 - [x] Integrate SBOM target & full pre-flight verification suite in Makefile (`make check`).
-- [ ] Begin application domain architecture and implementation planning (`{task-slug}.md`).
+- [x] Enforce Strict TypeScript Safety & Zero-Crash Compiler Flags (`tsconfig.json`).
+- [x] Implement OpenTelemetry v1.34 Structured Tracing & W3C Context Propagation (`src/infrastructure/telemetry/tracer.ts`).
+- [x] Scaffold Monorepo Directory Backbone (`packages/types`, `packages/config`, `packages/utils`) with `@project4/*` path aliases.
+- [x] Align Persistent Memory Vault (`.agents/memory/`) and System Topology (`CODEBASE.md`) with 2026 enterprise standards.
 
 ---
 
 ## 🌲 Active Branches & Worktrees
 
-- `develop` — Primary active branch (Clean, synced with enterprise environment upgrades).
+- `develop` — Primary active branch (Clean, synced with 2026 enterprise environment upgrades).
+

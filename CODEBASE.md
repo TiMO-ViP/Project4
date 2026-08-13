@@ -14,6 +14,11 @@ graph TD
     GitEngine --> Worktrees[.worktrees/ Isolated Execution]
     GitEngine --> RemoteRepo[GitHub Remote origin/main]
     CLI --> DevContainer[.devcontainer/ Docker Container]
+    CLI --> Turbo[Turborepo Pipeline / pnpm v11]
+    Turbo --> TS[TypeScript 5.7+ Compiler / path aliases]
+    TS --> Packages[packages/ @project4/* Backbone]
+    TS --> Telemetry[src/infrastructure/telemetry/tracer.ts]
+    CLI --> SBOM[CycloneDX 1.6 sbom.cdx.json Generator]
 ```
 
 ---
@@ -25,9 +30,12 @@ graph TD
 ├── AGENTS.md                  ← Master AI agent rules and standards
 ├── CODEBASE.md                ← System map & architectural index (this file)
 ├── STATUS.md                  ← Live interactive workspace status board
-├── Makefile                   ← Master CLI automation interface (make help, make dev)
+├── Makefile                   ← Master CLI automation interface (make help, make check)
 ├── Dockerfile                 ← Multi-stage production container build
 ├── docker-compose.yml         ← Container orchestration file
+├── tsconfig.json              ← Strict TS 5.7+ compiler flags & path aliases
+├── turbo.json                 ← Turborepo build pipeline caching rules
+├── sbom.cdx.json              ← CycloneDX 1.6 Supply Chain Security SBOM
 ├── .editorconfig              ← Code formatting rules across editors
 ├── .gitignore                 ← Git exclusion rules
 ├── .env.example               ← Environment variable template
@@ -36,6 +44,21 @@ graph TD
 ├── .githooks/                 ← Version-controlled native Git hooks
 │   ├── pre-commit             ← Secret scanning security gate
 │   └── prepare-commit-msg     ← Deterministic auto-commit generator
+├── packages/                  ← Monorepo package backbone
+│   ├── types/index.ts         ← @project4/types shared interfaces
+│   ├── config/index.ts        ← @project4/config app configuration
+│   └── utils/index.ts         ← @project4/utils functional helpers
+├── src/                       ← Clean Architecture source code
+│   └── infrastructure/
+│       └── telemetry/
+│           └── tracer.ts      ← OpenTelemetry context propagation & logger
+├── tests/                     ← Test suites (unit, integration, E2E)
+│   └── unit/
+│       └── telemetry/
+│           └── tracer.test.mjs ← OpenTelemetry tracer test suite
+├── docs/                      ← Specifications, architecture plans, & reports
+│   └── superpowers/
+│       └── plans/             ← Implementation plans (2026-08-13-ultimate-2026-env-upgrade.md)
 └── .agents/                   ← AG Kit Governance & Agentic Suite
     ├── ARCHITECTURE.md        ← AG Kit component catalog
     ├── VERSION                ← AG Kit CalVer version (2026.7.27)
@@ -60,6 +83,7 @@ graph TD
 - **Runtimes**: Node.js `v24.19.0`, Python `3.14.4`
 - **VCS**: Git `2.53.0` (Default branch: `main`)
 - **Toolkit**: AG Kit `2026.7.27`
+- **Build System**: Turborepo + pnpm v11.21
 
 ---
 
@@ -67,7 +91,12 @@ graph TD
 
 | File / Component | Upstream Dependencies | Downstream Dependents |
 | :--- | :--- | :--- |
-| `Makefile` | `.githooks/`, `.agents/scripts/` | Developer CLI execution |
+| `Makefile` | `.githooks/`, `.agents/scripts/` | Developer CLI execution (`make check`, `make sbom`) |
+| `tsconfig.json` | `packages/`, `src/` | TypeScript compiler, build tools, path aliases |
+| `src/infrastructure/telemetry/tracer.ts` | `node:crypto` | Application observability & correlation logging |
+| `packages/` | `tsconfig.json` | Shared domain packages across monorepo (`@project4/*`) |
+| `sbom.cdx.json` | `package.json`, `pnpm-lock.yaml` | Supply chain security audit & compliance |
 | `.githooks/` | `.agents/scripts/git-auto-commit-msg.sh` | Git commit lifecycle |
 | `.devcontainer/` | `Dockerfile`, `docker-compose.yml` | Cloud & container development |
 | `AGENTS.md` | `.editorconfig`, `.gitignore` | All agent execution pipelines |
+
