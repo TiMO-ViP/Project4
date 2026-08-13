@@ -1,8 +1,8 @@
 # 📑 LIVE FILE MANIFEST & CRYPTOGRAPHIC SIGNATURE MATRIX
 
 > **AUTOMATED AUDIT & REPRODUCIBILITY MANIFEST**
-> **Timestamp Signature (UTC)**: `2026-08-13T13:36:27.490489+00:00`
-> **Total Tracked Files**: `408`
+> **Timestamp Signature (UTC)**: `2026-08-13T13:40:51.578344+00:00`
+> **Total Tracked Files**: `409`
 
 ---
 
@@ -16,7 +16,7 @@
 | [`.agents/CHANGELOG.md`](../../.agents/CHANGELOG.md) | `4190` | `74` | `ca4fac7f18077335` | `ca4fac7f180773358d679ae09fd058b293c6dd1d7063280d63b78316cd6d515b` |
 | [`.agents/DEPENDENCY_GRAPH.md`](../../.agents/DEPENDENCY_GRAPH.md) | `8649` | `231` | `9a19e62a2141cd72` | `9a19e62a2141cd72ea1ff2106900948460879ca2218764d2cfb31b02f21918fd` |
 | [`.agents/README.md`](../../.agents/README.md) | `4094` | `114` | `d6a29fbc3367f5ab` | `d6a29fbc3367f5ab5739f84bad71710879119d1b697b6a18943dcdad5e2ec654` |
-| [`.agents/VERSION`](../../.agents/VERSION) | `10` | `1` | `8f5c2029067175ce` | `8f5c2029067175ceac1b444a2e6d39702d0971ef161e9427478e32435a968a47` |
+| [`.agents/VERSION`](../../.agents/VERSION) | `6` | `1` | `59854984853104df` | `59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03` |
 | [`.agents/agent/backend-specialist.md`](../../.agents/agent/backend-specialist.md) | `8589` | `264` | `65087ad56011ce55` | `65087ad56011ce55231f2754c3bdbb1c32ee14fa24ae9f389c0a7a67c178f1fd` |
 | [`.agents/agent/code-archaeologist.md`](../../.agents/agent/code-archaeologist.md) | `3347` | `107` | `a0c654b885773c42` | `a0c654b885773c425f6a1c3f35ac7a1d509ed32e08a4e2daf373ddc5c6c805f3` |
 | [`.agents/agent/database-architect.md`](../../.agents/agent/database-architect.md) | `6850` | `227` | `1649c5ba554eca26` | `1649c5ba554eca2674df75c50229cc00463aed1400d3b6d55131d8f4b12f3c76` |
@@ -41,7 +41,7 @@
 | [`.agents/hooks.json`](../../.agents/hooks.json) | `223` | `11` | `e411748245fd87be` | `e411748245fd87be9f0f88dea7f987352827900acb615d8ff8271db018605727` |
 | [`.agents/hooks/README.md`](../../.agents/hooks/README.md) | `5114` | `121` | `9ca1d291ae7fb0f7` | `9ca1d291ae7fb0f79e60bb3982f3ff4dba488844f4fa833088b710e6b2616e96` |
 | [`.agents/hooks/antigravity-contract.schema.json`](../../.agents/hooks/antigravity-contract.schema.json) | `666` | `20` | `b18072ace48ca61e` | `b18072ace48ca61e3182fcddfe956240db202bf104ee18bf03800ab9a87b3144` |
-| [`.agents/hooks/antigravity-doctor.mjs`](../../.agents/hooks/antigravity-doctor.mjs) | `11700` | `281` | `64d70ac198283b1d` | `64d70ac198283b1d1cc5198fccbce181425eb67062776a0d85b1af827e0a797a` |
+| [`.agents/hooks/antigravity-doctor.mjs`](../../.agents/hooks/antigravity-doctor.mjs) | `11538` | `278` | `704adc228576e7c0` | `704adc228576e7c0e96f27f2b0b0bfe0b684bbdf5632e54c54d1533294cb3701` |
 | [`.agents/hooks/antigravity-hooks.schema.json`](../../.agents/hooks/antigravity-hooks.schema.json) | `1165` | `44` | `a9857d66a2806217` | `a9857d66a28062177a8bb381d7893674b385aac5b9965529283c18e0e890d62f` |
 | [`.agents/hooks/build-plugin.mjs`](../../.agents/hooks/build-plugin.mjs) | `4883` | `130` | `1fd229c7441aa2fd` | `1fd229c7441aa2fddcdb9434bb8ada76b6012456c98fa0b8db2bff2a01dfbab4` |
 | [`.agents/hooks/plugin/GEMINI.md`](../../.agents/hooks/plugin/GEMINI.md) | `933` | `13` | `519f5d78c2c4ef4f` | `519f5d78c2c4ef4fe8f24eb6a294f603ac6498302633315f6c2b2e2095a64d90` |
@@ -49,11 +49,11 @@
 | [`.agents/hooks/sync-mcp.mjs`](../../.agents/hooks/sync-mcp.mjs) | `4187` | `101` | `b56963054f34cf56` | `b56963054f34cf56b63ef9bc0e4c7cedd88a49b808c682a5341e61b8ec5db05f` |
 | [`.agents/hooks/tests/antigravity.test.mjs`](../../.agents/hooks/tests/antigravity.test.mjs) | `3564` | `80` | `5e40131265749f54` | `5e40131265749f54347470a6462dbfdf51ccef0a69165baf008b0b87443dbd5a` |
 | [`.agents/hooks/validate-tool-call.mjs`](../../.agents/hooks/validate-tool-call.mjs) | `2980` | `111` | `c8f0be06e8697efb` | `c8f0be06e8697efbfe3a2e614a3bed1a6e12c714e3faef72ca31c5fbe168e857` |
-| [`.agents/logs/CURRENT_SESSION.md`](../../.agents/logs/CURRENT_SESSION.md) | `621776` | `18301` | `c47305798dbf54a8` | `c47305798dbf54a804dbc9d475000b519fe8763a83583df8607550cb269d3f74` |
-| [`.agents/logs/live_session.jsonl`](../../.agents/logs/live_session.jsonl) | `91066` | `81` | `70da22ab212918b9` | `70da22ab212918b924c76050687c3a644e2751df211f6ee10aa807c997459a4e` |
+| [`.agents/logs/CURRENT_SESSION.md`](../../.agents/logs/CURRENT_SESSION.md) | `639737` | `18806` | `6f5c35936ed5574a` | `6f5c35936ed5574a72b5fb2f059ee2ae16852b1640dbfcf5083bfa14d90b266c` |
+| [`.agents/logs/live_session.jsonl`](../../.agents/logs/live_session.jsonl) | `94969` | `82` | `8745657f88111e07` | `8745657f88111e07328b24383de51f685219170f489a83997da82fd61885e605` |
 | [`.agents/manifest.json`](../../.agents/manifest.json) | `29004` | `1332` | `78392f4acd6db705` | `78392f4acd6db7053d4e36aea42cd6b43b6c288bc9722ea38d1cf579db0e7bc4` |
 | [`.agents/manifest.lock.json`](../../.agents/manifest.lock.json) | `24294` | `226` | `dff3c43faa69c2d3` | `dff3c43faa69c2d3c6ab172a0349429563f6760a7546ba510920b840e53e9f43` |
-| [`.agents/mcp_config.json`](../../.agents/mcp_config.json) | `1105` | `52` | `ec71816426c6e9d8` | `ec71816426c6e9d8989ff88300adf5568f2d6b89ad48fa50b52c84bff7e81574` |
+| [`.agents/mcp_config.json`](../../.agents/mcp_config.json) | `1099` | `52` | `5d4799fe1d174a75` | `5d4799fe1d174a75a9a84935a40b578fb385bb75627fdf5e2a4d5bec6b22b6cf` |
 | [`.agents/memory/MEMORY.md`](../../.agents/memory/MEMORY.md) | `6421` | `111` | `aa89bfaacb0642dd` | `aa89bfaacb0642ddcf7585c2ac6329be11340a931714de347731b9dd13d5373e` |
 | [`.agents/memory/feedback-history.md`](../../.agents/memory/feedback-history.md) | `138` | `9` | `06abb008293a359e` | `06abb008293a359ebf30eafaacc0212c4a21e659170f251edd354f5433bfb1a5` |
 | [`.agents/memory/project-conventions.md`](../../.agents/memory/project-conventions.md) | `2118` | `36` | `68d3b8fd8629c62b` | `68d3b8fd8629c62bd1175810c9d3972537c07f3914c7b23e733bdce75ddc0bd3` |
@@ -348,6 +348,7 @@
 | [`DESIGN.md`](../../DESIGN.md) | `2287` | `72` | `2ea33130c17a85a6` | `2ea33130c17a85a61a2721a117352f452f4a6b19356ffede0a5f2ba9763984c3` |
 | [`Dockerfile`](../../Dockerfile) | `262` | `12` | `cc30a3aebca65f1d` | `cc30a3aebca65f1dcfad2387c7be35c3d59d7cc8b837895ebc4fff2616beb328` |
 | [`LICENSE`](../../LICENSE) | `1070` | `21` | `0780ed9170ac9b90` | `0780ed9170ac9b90998554f71fe6ef3570f64794f65e9b89c803584c2d1ca208` |
+| [`MIGRATION.md`](../../MIGRATION.md) | `1295` | `52` | `ef6c0f6e0004cfcc` | `ef6c0f6e0004cfccc3839404c4f206889a171e519687007c52936fd59a42a1d7` |
 | [`Makefile`](../../Makefile) | `4812` | `146` | `8979157e08c87a10` | `8979157e08c87a1002e4ae80058e3f3b4fcd066166ea322de245614d135bd8a4` |
 | [`New Folder/text.txt`](../../New Folder/text.txt) | `1797` | `39` | `d8a9c3fd69179414` | `d8a9c3fd6917941496af9aa099dbfb06a33ee69ec246746742ff91f9aa9012f8` |
 | [`README.md`](../../README.md) | `9816` | `157` | `1298dcca2407a617` | `1298dcca2407a617019651632ca6a8e35cb304f7a4b3724d9c7e96c8a64c7171` |
@@ -375,7 +376,7 @@
 | [`packages/utils/index.ts`](../../packages/utils/index.ts) | `956` | `35` | `10cc0cf01e545e7a` | `10cc0cf01e545e7a6856c386c128a2be4b2762b8404560ba118c37875e80ea69` |
 | [`pnpm-lock.yaml`](../../pnpm-lock.yaml) | `88852` | `2825` | `ff07dd279e970b23` | `ff07dd279e970b23254aedca70b1ca19a6a2a57eb6bdec51316ed98c70eedc95` |
 | [`pyproject.toml`](../../pyproject.toml) | `480` | `27` | `39c268e701c9a422` | `39c268e701c9a4224673bd88c26c6d7e9fea9a97be2d6cc7417adfb63310e3e8` |
-| [`sbom.cdx.json`](../../sbom.cdx.json) | `4584` | `182` | `ca785e2c728d05cd` | `ca785e2c728d05cd88c8b01f3f75d5678ac54d1bb290350be6aaff1f36b6e8aa` |
+| [`sbom.cdx.json`](../../sbom.cdx.json) | `4584` | `182` | `801953c23e0d3210` | `801953c23e0d32109ad4a5f8c4a1c9cee1c15ab6f64525ae1a8a50de97ceabfe` |
 | [`skills-lock.json`](../../skills-lock.json) | `549` | `17` | `2e2775a421a15c0b` | `2e2775a421a15c0b7b6afe99ea89ea3ad96e8eba31d2aec0b460ec358983d5ed` |
 | [`src/app/globals.css`](../../src/app/globals.css) | `511` | `24` | `c877d99481fc1a3b` | `c877d99481fc1a3bc39a793fb7a934d0131c7a257a827ed9fca67511656fa7ed` |
 | [`src/app/layout.tsx`](../../src/app/layout.tsx) | `448` | `21` | `27c4669d2dec9b21` | `27c4669d2dec9b218a6712ef8faf19ffbd44a6b8a260cc7b7eca6a53cbc70af1` |
